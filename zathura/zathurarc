@@ -1,0 +1,17 @@
+map <C-i> recolor
+
+set recolor true
+#dddcc9
+#999886
+#DEFAULT: dcdccc
+set recolor-darkcolor "#999999"
+
+# Lighter: 3a3a3a
+# Darker: 333333
+# Even darker: 282828
+# DEFAULT: 1f1f1f
+set recolor-lightcolor "#1f1f1f"
+set default-bg "#1f1f1f"
+
+set window-title-basename "true"
+set selection-clipboard "clipboard"

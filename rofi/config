@@ -1,0 +1,5 @@
+rofi.combi-modi:    	window,drun,ssh
+rofi.theme:         	onedark
+rofi.modi:          	combi,run
+rofi.font:		Ubuntu Mono 18
+
