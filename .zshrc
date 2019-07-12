@@ -4,13 +4,33 @@
 # Path to your oh-my-zsh installation.
   export ZSH="/home/stavrosfil/.oh-my-zsh"
 
+  source /home/stavrosfil/antigen.zsh
+
+# Load the oh-my-zsh's library.
+  antigen use oh-my-zsh
+
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+  antigen bundle zsh-users/zsh-autosuggestions  
+  antigen bundle git
+  antigen bundle command-not-found
+
+# Syntax highlighting bundle.
+  antigen bundle zsh-users/zsh-syntax-highlighting
+
+# Load the theme.
+  antigen theme geometry-zsh/geometry
+
+# Tell Antigen that you're done.
+  antigen apply
+
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
 # ZSH_THEME="aphrodite"
- ZSH_THEME="geometry/geometry"
+# ZSH_THEME="geometry/geometry"
 # POWERLEVEL9K_MODE='awesome-fontconfig'
 # ZSH_THEME="powerlevel9k/powerlevel9k"
 
@@ -66,13 +86,7 @@
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-  zsh-autosuggestions
-  command-not-found
-)
 source $ZSH/oh-my-zsh.sh
-#source ~/.oh-my-zsh/themes/geometry/geometry.zsh
 
 # User configuration
 DEFAULT_USER=$USER
@@ -144,19 +158,3 @@ alias cubemx="tools/cubemx/STM32CubeMX"
 alias cfi="vi $HOME/.config/i3/config"
 alias ser="ssh stavrosfil@23.97.181.92 -p 1999"
 
-# added by Anaconda3 2018.12 installer
-# >>> conda init >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$(CONDA_REPORT_ERRORS=false '/home/stavrosfil/tools/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    \eval "$__conda_setup"
-else
-    if [ -f "/home/stavrosfil/tools/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/stavrosfil/tools/anaconda3/etc/profile.d/conda.sh"
-        CONDA_CHANGEPS1=false conda activate base
-    else
-        \export PATH="/home/stavrosfil/tools/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda init <<<
