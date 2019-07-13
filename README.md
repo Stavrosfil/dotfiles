@@ -1,4 +1,4 @@
-.
+```
 ├── compton
 │   ├── compton.conf
 │   ├── compton.conf.old
@@ -31,5 +31,4 @@
 ├── vim
 └── zathura
     └── zathurarc
-
-6 directories, 26 files
+```
