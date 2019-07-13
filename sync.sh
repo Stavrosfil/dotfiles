@@ -1,27 +1,40 @@
 #!/bin/bash
 
-# Initial setup of folders and repo!
-if [ $already_setup != true ];
-then
+# Install packages from a file, and remove all the comments inside!
+sudo apt install $(grep -vE "^\s*#" apt-packages.txt | tr "\n" " ")
+
+# Dotfiles location
+DOTS="$HOME/repos/dotfiles"
+
+# Initial setup of folders, repo and symlinks!
+if [ $already_setup == true ]; then
 	echo "Setting up repos directories"
-	cd ~
-	mkdir -p repos
+	cd $HOME
+
+	rm -rf .scripts .zshrc
+	cd .config
+	rm -rf i3 i3blocks rofi vim zathura compton
+
+	cd $HOME
+	mkdir -p repos .scripts
+
 	cd repos
-	echo "Cloning repo"
+	echo "Cloning repo..."
 	git clone https://github.com/stavrosfil/dotfiles
+
+	# Symbolic links!
+	ln -sv $DOTS/.scripts $HOME/
+	ln -sv $DOTS/compton $HOME/.config/
+	ln -sv $DOTS/i3 $HOME/.config/
+	ln -sv $DOTS/i3blocks $HOME/.config/
+	ln -sv $DOTS/rofi $HOME/.config/
+	ln -sv $DOTS/vim $HOME/.config/
+	ln -sv $DOTS/zathura $HOME/.config/
+	ln -sv $DOTS/.zshrc $HOME/
 fi
 
-# Symbolic links!
-ln -sv $PWD/.scripts $HOME/
-ln -sv $PWD/compton $HOME/.config/
-ln -sv $PWD/i3 $HOME/.config/
-ln -sv $PWD/i3blocks $HOME/.config/
-ln -sv $PWD/rofi $HOME/.config/
-
-ln -sv $PWD/vim $HOME/.config/
-
-ln -sv $PWD/zathura $HOME/.config/
-ln -sv $PWD/.zshrc $HOME/
+cd $DOTS
+git pull
 
 echo $PWD
 
