@@ -145,6 +145,7 @@ alias cd="custom_cd"
 export PATH="/home/stavrosfil/tools/android-studio/bin:$PATH"
 export PATH="/home/stavrosfil/tools/flutter/bin:$PATH"
 export PATH="/home/stavrosfil/.scripts:$PATH"
+export PATH="${PATH}:${HOME}/.local/bin/"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -152,9 +153,23 @@ export PATH="/home/stavrosfil/.scripts:$PATH"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
 alias cl="clear"
 alias cubemx="tools/cubemx/STM32CubeMX"
+alias zcon="vi $HOME/.zshrc"
 alias cfi="vi $HOME/.config/i3/config"
 alias ser="ssh stavrosfil@23.97.181.92 -p 1999"
+alias userpackages="comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)"
 
+wal-tile() {
+    wal -n -i "$@"
+    #feh --bg-fill --auto-zoom "/home/stavrosfil/Pictures/firewatch.png"
+    feh --bg-fill --auto-zoom "$(< "${HOME}/Pictures/firewatch.png")"
+}
+
+# Open files with zathura and disown
+za() {
+	zathura $1 &
+	disown
+}
+
+export already_setup=true

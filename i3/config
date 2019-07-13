@@ -220,7 +220,10 @@ exec_always xinput set-prop 12 301 1
 exec_always xinput set-prop 12 299 1
 
 #exec_always feh --bg-fill --auto-zoom "/home/stavrosfil/Pictures/sunrise-6-3840×2160.jpg"
-exec_always feh --bg-fill --auto-zoom "/home/stavrosfil/Pictures/firewatch.jpg"
+exec_always feh --bg-fill --auto-zoom "/home/stavrosfil/Pictures/firewatch.png"
+
+exec_always --no-startup-id "setxkbmap -layout us,gr"
+exec_always --no-startup-id "setxkbmap -option 'grp:alt_space_toggle'"
 
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
