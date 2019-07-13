@@ -9,14 +9,14 @@ DOTS="$HOME/repos/dotfiles"
 # Initial setup of folders, repo and symlinks!
 if [ $already_setup == true ]; then
 	echo "Setting up repos directories"
-	cd $HOME
 
-	rm -rf .scripts .zshrc
+	cd $HOME
+	rm -rf .scripts .zshrc .vimrc
 	cd .config
 	rm -rf i3 i3blocks rofi .vim zathura compton
 
 	cd $HOME
-	mkdir -p repos .scripts
+	mkdir -p repos
 
 	cd repos
 	echo "Cloning repo..."
