@@ -24,7 +24,7 @@ if [ "$already_setup" != true ]; then
 	cd $HOME
 	rm -rf .scripts .zshrc .vimrc
 	cd .config
-	rm -rf i3 i3blocks rofi .vim zathura compton
+	rm -rf i3 i3blocks rofi .vim zathura compton kitty
 
 	cd $HOME
 	mkdir -p repos
@@ -38,6 +38,7 @@ if [ "$already_setup" != true ]; then
 	ln -sv $DOTS/compton $HOME/.config/
 	ln -sv $DOTS/i3 $HOME/.config/
 	ln -sv $DOTS/i3blocks $HOME/.config/
+	ln -sv $DOTS/kitty $HOME/.config
 	ln -sv $DOTS/rofi $HOME/.config/
 	ln -sv $DOTS/vim/.vim $HOME/.config/
 	ln -sv $DOTS/vim/.vimrc $HOME/
