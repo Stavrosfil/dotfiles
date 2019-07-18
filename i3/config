@@ -215,8 +215,14 @@ bar {
         }
 }
 
-exec_always xinput set-prop 12 300 1
-exec_always xinput set-prop 12 284 1
+# Touchpad tapping
+exec_always xinput set-prop 12 305 1
+# Touchpad natural scrolling
+exec_always xinput set-prop 12 289 1
+# Touchpad left handed
+exec_always xinput set-prop 12 301 0
+# Touchpad disable while printed
+exec_always xinput set-prop 12 313 0
 
 #exec_always feh --bg-fill --auto-zoom "/home/stavrosfil/Pictures/sunrise-6-3840×2160.jpg"
 exec_always feh --bg-fill --auto-zoom "$HOME/repos/dotfiles/wall.png"
