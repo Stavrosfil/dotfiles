@@ -1,6 +1,9 @@
 #!/bin/bash
+
+cd $HOME
+
 # Install all snap packages
-< snap-packages.txt xargs sudo snap install
+snap-packages.txt xargs sudo snap install
 
 # Install packages from a file, and remove all the comments inside!
 sudo apt install $(grep -vE "^\s*#" apt-packages.txt | tr "\n" " ")
