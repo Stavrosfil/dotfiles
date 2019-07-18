@@ -2,7 +2,7 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/stavrosfil/.oh-my-zsh"
+# export ZSH="/home/stavrosfil/.oh-my-zsh"
 
 source /home/stavrosfil/antigen.zsh
 
