@@ -215,9 +215,8 @@ bar {
         }
 }
 
-exec_always xinput set-prop 12 283 1
-exec_always xinput set-prop 12 301 1
-exec_always xinput set-prop 12 299 1
+exec_always xinput set-prop 12 300 1
+exec_always xinput set-prop 12 284 1
 
 #exec_always feh --bg-fill --auto-zoom "/home/stavrosfil/Pictures/sunrise-6-3840×2160.jpg"
 exec_always feh --bg-fill --auto-zoom "$HOME/repos/dotfiles/wall.png"
