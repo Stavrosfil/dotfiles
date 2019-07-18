@@ -204,14 +204,14 @@ bar {
 	separator_symbol "/"
 	#height 28
 	colors {
-##		background  #1d2021A0
-		background  #282c34
-		statusline  #CFD8DC
-        	separator   #3b84c0
-        	focused_workspace   #3b84c0 #3b84c0 #abb2bf
-        	active_workspace    #282c34 #282c34 #abb2bf
-        	inactive_workspace  #282c34 #282c34 #CFD8DC
-		urgent_workspace #be5046 #be5046 #abb2bf
+##		background              #1d2021A0
+		background              #282c34
+		statusline              #CFD8DC
+        	separator               #3b84c0
+        	focused_workspace       #3b84c0 #3b84c0 #abb2bf
+        	active_workspace        #282c34 #282c34 #abb2bf
+        	inactive_workspace      #282c34 #282c34 #CFD8DC
+		urgent_workspace        #be5046 #be5046 #abb2bf
         }
 }
 
@@ -220,7 +220,7 @@ exec_always xinput set-prop 12 301 1
 exec_always xinput set-prop 12 299 1
 
 #exec_always feh --bg-fill --auto-zoom "/home/stavrosfil/Pictures/sunrise-6-3840×2160.jpg"
-exec_always feh --bg-fill --auto-zoom "/home/stavrosfil/Pictures/wall.png"
+exec_always feh --bg-fill --auto-zoom "$HOME/repos/dotfiles/wall.png"
 
 exec_always --no-startup-id "setxkbmap -layout us,gr"
 exec_always --no-startup-id "setxkbmap -option 'grp:alt_space_toggle'"
