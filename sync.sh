@@ -14,6 +14,9 @@ curl -L git.io/antigen > antigen.zsh
 # Dotfiles location
 DOTS="$HOME/repos/dotfiles"
 
+# Make zsh default
+chsh -s $(which zsh)
+
 # Initial setup of folders, repo and symlinks!
 if [ "$already_setup" != true ]; then
 	echo "Setting up repos directories"
