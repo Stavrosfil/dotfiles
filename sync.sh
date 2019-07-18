@@ -7,11 +7,11 @@ sudo apt install $(grep -vE "^\s*#" apt-packages.txt | tr "\n" " ")
 DOTS="$HOME/repos/dotfiles"
 
 # Initial setup of folders, repo and symlinks!
-if [ $already_setup == true ]; then
+if [ "$already_setup" != true ]; then
 	echo "Setting up repos directories"
 
 	cd $HOME
-	rm -rf .scripts .zshrc .vimrc
+	rm -rf .scripts .zshrc .vimrc /Pictures/wall.png
 	cd .config
 	rm -rf i3 i3blocks rofi .vim zathura compton
 
@@ -32,6 +32,7 @@ if [ $already_setup == true ]; then
 	ln -sv $DOTS/vim/.vimrc $HOME/
 	ln -sv $DOTS/zathura $HOME/.config/
 	ln -sv $DOTS/.zshrc $HOME/
+	ln -sv $DOTS/wall.png $HOME/Pictures/
 fi
 
 cd $DOTS

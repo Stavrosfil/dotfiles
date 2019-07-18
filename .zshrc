@@ -6,6 +6,9 @@ export ZSH="/home/stavrosfil/.oh-my-zsh"
 
 source /home/stavrosfil/antigen.zsh
 
+# Export sync script thingy
+export already_setup=true
+
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
@@ -97,6 +100,7 @@ alias cfi="vi $HOME/.config/i3/config"
 alias ser="ssh stavrosfil@23.97.181.92 -p 1999"
 alias dot="cd $HOME/repos/dotfiles"
 alias userpackages="comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)"
+alias sync="bash $HOME/repos/dotfiles/sync.sh"
 
 # History directory navigation
 d='dirs -v | head -10'
@@ -121,5 +125,3 @@ za() {
     zathura $1 &
     disown
 }
-
-export already_setup=true
