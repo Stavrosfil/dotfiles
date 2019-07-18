@@ -5,6 +5,9 @@
 # Install packages from a file, and remove all the comments inside!
 sudo apt install $(grep -vE "^\s*#" apt-packages.txt | tr "\n" " ")
 
+# Install antigen for zsh
+curl -L git.io/antigen > antigen.zsh
+
 # Dotfiles location
 DOTS="$HOME/repos/dotfiles"
 
