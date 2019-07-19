@@ -1,4 +1,15 @@
+# Dotfiles
+
+This is a repo with my config files, feel free to use and enjoy!
+
+# Screens
+
+/TODO
+
+# Repo Structure
 ```
+.
+├── apt-packages.txt
 ├── compton
 │   ├── compton.conf
 │   ├── compton.conf.old
@@ -25,10 +36,18 @@
 │   ├── weather
 │   ├── wifi
 │   └── window
+├── kitty
+│   ├── kitty.conf
+│   ├── onedark.conf
+│   └── source_code_x.conf
 ├── README.md
 ├── rofi
-│   └── config
+│   ├── config
+│   └── onedark.rasi
+├── snap-packages.txt
+├── sync.sh
 ├── vim
+├── wall.png
 └── zathura
     └── zathurarc
 ```

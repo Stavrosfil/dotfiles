@@ -12,11 +12,13 @@ git
 gnome-getting-started-docs-el
 gnome-user-docs-el
 gparted
+hello
 htop
 hunspell-el
 i3
 i3blocks
 imagemagick
+kitty
 language-pack-gnome-el
 lm-sensors
 lxappearance
@@ -31,6 +33,7 @@ python3-pip
 qt4-qtconfig
 rofi
 scrot
+transmission
 tree
 vim
 wngerman
