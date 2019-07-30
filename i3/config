@@ -108,7 +108,7 @@ set $ws7			"7 Files "
 set $ws8			"8 Comms "
 set $ws9			"9 Chatting "
 set $ws10 			"10 Media "
-W
+
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
