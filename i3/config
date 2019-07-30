@@ -108,7 +108,7 @@ set $ws7			"7 Files "
 set $ws8			"8 Comms "
 set $ws9			"9 Chatting "
 set $ws10 			"10 Media "
-
+W
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -214,31 +214,19 @@ bar {
         }
 }
 
-# Touchpad tapping
-exec_always xinput set-prop 12 305 1
-# Touchpad natural scrolling
-exec_always xinput set-prop 12 289 1
-# Touchpad left handed
-exec_always xinput set-prop 12 301 0
-# Touchpad disable while printed
-exec_always xinput set-prop 12 313 0
-
 #exec_always feh --bg-fill --auto-zoom "/home/stavrosfil/Pictures/sunrise-6-3840×2160.jpg"
 exec_always feh --bg-fill --auto-zoom "$HOME/repos/dotfiles/wall.png"
 
 exec_always --no-startup-id "setxkbmap -layout us,gr"
 exec_always --no-startup-id "setxkbmap -option 'grp:alt_space_toggle'"
 
+# Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-# Pulse Audio controls
-#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
-
 # Sreen brightness controls
+# Do not forget to set X11 config correctly for this to properly work
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5 #screen brightness
 
