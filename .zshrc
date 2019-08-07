@@ -91,7 +91,7 @@ alias cubemx="tools/cubemx/STM32CubeMX"
 alias zcon="vi $HOME/.zshrc"
 alias cfi="vi $HOME/.config/i3/config"
 alias ser="ssh stavrosfil@23.97.181.92 -p 1999"
-alias dot="cd $HOME/repos/dotfiles"
+alias dot="$HOME/repos/dotfiles/"
 alias userpackages="comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)"
 alias sync="bash $HOME/repos/dotfiles/sync.sh"
 

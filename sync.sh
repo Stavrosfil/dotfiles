@@ -25,6 +25,7 @@ if [ "$already_setup" != true ]; then
 	rm -rf .scripts .zshrc .vimrc
 	cd .config
 	rm -rf i3 i3blocks rofi .vim zathura compton kitty ranger
+	sudo rm -rf /etc/X11/xorg.conf /etc/X11/xorg.conf.d
 
 	cd $HOME
 	mkdir -p repos
@@ -45,6 +46,8 @@ if [ "$already_setup" != true ]; then
 	ln -sv $DOTS/vim/.vimrc $HOME/
 	ln -sv $DOTS/zathura $HOME/.config/
 	ln -sv $DOTS/.zshrc $HOME/
+	sudo ln -sv $DOTS/X11/xorg.conf /etc/X11/
+	sudo ln -sv $DOTS/X11/xorg.conf.d /etc/X11/
 	# ln -sv $DOTS/wall.png $HOME/Pictures/
 fi
 
