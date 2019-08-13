@@ -84,7 +84,7 @@ export PATH="/home/stavrosfil/tools/android-studio/bin:$PATH"
 export PATH="/home/stavrosfil/tools/flutter/bin:$PATH"
 export PATH="/home/stavrosfil/.scripts:$PATH"
 export PATH="${PATH}:${HOME}/.local/bin/"
-
+export IDF_PATH="/home/stavrosfil/esp/esp-idf"
 export TERM=xterm
 
 # Aliases
@@ -135,3 +135,5 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+# . $HOME/esp/esp-idf/export.sh

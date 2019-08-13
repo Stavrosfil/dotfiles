@@ -27,9 +27,9 @@ syntax 		on
 colorscheme 	onedark
 "colorscheme 	halfdark
 
-set		number
-set 		relativenumber
-set 		cursorline
+"set		number
+"set 		relativenumber
+"set 		cursorline
 
 " Use Control + n to toggle the directories.
 map <C-n> :NERDTreeToggle<CR>

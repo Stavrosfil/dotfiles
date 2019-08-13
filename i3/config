@@ -187,6 +187,7 @@ set $inactive-bg-color	        #000000
 set $text-color		        #f3f4f5
 set $inactive-text-color	#676E7D
 set $urgent-bg-color		#E53935
+set $transparent                #00000000
 
 # Set the window colors
 #
@@ -212,19 +213,18 @@ bindsym $mod+Control+x exec --no-startup-id "/home/stavrosfil/.scripts/lock_and_
 bindsym $mod+Control+t		sticky toggle
 
 bar {
-   	# status_command i3blocks
 	status_command i3blocks -c ~/.config/i3blocks/config
 	position bottom
-#	position top
-#	i3bar_command i3bar -t
-#	status_command i3status
 	font pango:Ubuntu Mono 10
 	strip_workspace_numbers yes
 	separator_symbol "/"
+	# i3bar_command i3bar -t
+	# position top
 	#height 28
 	colors {
-#		background              #1d2021A0
-		background              #282c34
+		# background              #1d2021A0
+		# background              #282c34
+                background              $transparent
 		statusline              #CFD8DC
         	separator               #3b84c0
         	focused_workspace       #3b84c0 #3b84c0 #abb2bf
