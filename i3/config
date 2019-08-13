@@ -193,10 +193,8 @@ bindsym $mod+u border pixel 1
 bindsym $mod+i border normal
 
 # Set custom color variables
-#set $bg-color			#2f343f
-#set $inactive-bg-color		#2f343f
-set $bg-color			#000000
-set $inactive-bg-color	        #000000
+set $bg-color			#2f343f
+set $inactive-bg-color		#2f343f
 set $text-color		        #f3f4f5
 set $inactive-text-color	#676E7D
 set $urgent-bg-color		#f08080
