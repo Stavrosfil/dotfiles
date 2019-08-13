@@ -238,7 +238,8 @@ bar {
 }
 
 # Set wallpaper
-exec_always feh --bg-fill --auto-zoom "$HOME/repos/dotfiles/wall.png"
+exec_always feh --bg-fill --auto-zoom "$HOME/repos/dotfiles/wall2.jpg"
+# exec_always feh --bg-fill --auto-zoom "$HOME/repos/dotfiles/wall.png"
 
 # Change language shortcuts
 exec_always --no-startup-id "setxkbmap -layout us,gr"

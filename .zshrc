@@ -96,6 +96,8 @@ alias ser="ssh stavrosfil@23.97.181.92 -p 1999"
 alias dot="$HOME/repos/dotfiles/"
 alias userpackages="comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)"
 alias sync="bash $HOME/repos/dotfiles/sync.sh"
+alias pip="pip3"
+alias rm="rm -rf"
 
 # History directory navigation
 d='dirs -v | head -10'
