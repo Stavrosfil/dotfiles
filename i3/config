@@ -205,7 +205,7 @@ set $transparent                #00000000
 # Set the window colors
 #
 # action		                border			background		text			indicator
-client.focused	                        $bg-color		$bg-color		$text-color		#2f343f
+client.focused	                        $bg-color		$bg-color		$text-color		#3a5e5f
 client.unfocused	                $inactive-bg-color	$inactive-bg-color	$inactive-text-color	#2f343f
 client.focused_inactive	                $inactive-bg-color	$inactive-bg-color	$inactive-text-color	#2f343f
 client.urgent $urgent-bg-color          $urgent-bg-color        $text-color                                     #2f343f
@@ -223,7 +223,7 @@ bindsym $mod+Control+l exec --no-startup-id "/home/stavrosfil/.scripts/lock_and_
 
 bindsym $mod+Control+x exec --no-startup-id "/home/stavrosfil/.scripts/lock_and_blur.sh; systemctl suspend"
 
-bindsym $mod+Control+t		sticky toggle
+bindsym $mod+Control+t sticky toggle
 
 bar {
 	status_command i3blocks -c ~/.config/i3blocks/config
