@@ -216,7 +216,8 @@ bindsym $mod+Control+x exec --no-startup-id "/home/stavrosfil/.scripts/lock_and_
 bindsym $mod+Control+t sticky toggle
 
 bar {
-	status_command i3blocks -c ~/.config/i3blocks/config
+        status_command SCRIPT_DIR=/usr/libexec/i3blocks i3blocks -c ~/.config/i3blocks/config
+	# status_command i3blocks -c ~/.config/i3blocks/config
 	position bottom
 	font pango:Noto Sans Display 10
 	strip_workspace_numbers yes
