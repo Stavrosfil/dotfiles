@@ -215,7 +215,7 @@ bindsym $mod+Control+t		sticky toggle
 bar {
 	status_command i3blocks -c ~/.config/i3blocks/config
 	position bottom
-	font pango:Ubuntu Mono 10
+	font pango:Roboto 10
 	strip_workspace_numbers yes
 	separator_symbol "/"
 	# i3bar_command i3bar -t
