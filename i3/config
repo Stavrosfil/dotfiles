@@ -98,16 +98,29 @@ bindsym $mod+a focus parent
 # Enable floating by default
 for_window [class="Skype"] floating enable
 
-set $ws1			"1 Terminals "
-set $ws2			"2 Browser "
-set $ws3			"3 Code "
-set $ws4			"4 Android "
-set $ws5			"5 Studying "
-set $ws6			"6 General "
-set $ws7			"7 Files "
-set $ws8			"8 Comms "
-set $ws9			"9 Chatting "
-set $ws10 			"10 Media "
+# FORMAT 1
+# set $ws1        "1 Terminals "
+# set $ws2	"2 Browser "
+# set $ws3	"3 Code "
+# set $ws4	"4 Android "
+# set $ws5	"5 Studying "
+# set $ws6	"6 General "
+# set $ws7	"7 Files "
+# set $ws8	"8 Comms "
+# set $ws9	"9 Chatting "
+# set $ws10 	"10 Media "
+
+# FORMAT 2
+set $ws1        "1:  "
+set $ws2	"2:  "
+set $ws3	"3:  "
+set $ws4	"4:  "
+set $ws5	"5:  "
+set $ws6	"6:  "
+set $ws7	"7:  "
+set $ws8	"8:  "
+set $ws9	"9:  "
+set $ws10 	"10:  "
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -215,9 +228,9 @@ bindsym $mod+Control+t		sticky toggle
 bar {
 	status_command i3blocks -c ~/.config/i3blocks/config
 	position bottom
-	font pango:Roboto 10
+	font pango:Roboto 11
 	strip_workspace_numbers yes
-	separator_symbol "/"
+	separator_symbol " | "
 	# i3bar_command i3bar -t
 	# position top
 	#height 28
@@ -226,11 +239,11 @@ bar {
 		# background              #282c34
                 background              $transparent
 		statusline              #CFD8DC
-        	separator               #3b84c0
-        	focused_workspace       #3b84c0 #3b84c0 #abb2bf
-        	active_workspace        #282c34 #282c34 #abb2bf
+        	separator               #5f9ea0
+        	focused_workspace       #5f9ea0 #5f9ea0 #e6e6fa
+        	active_workspace        #282c34 #282c34 #e6e6fa
         	inactive_workspace      #282c34 #282c34 #CFD8DC
-		urgent_workspace        #be5046 #be5046 #abb2bf
+		urgent_workspace        #f08080 #f08080 #e6e6fa
         }
 }
 
