@@ -6,6 +6,12 @@ interval=1
 signal=10
 color=#81b71a
 
+[essid]
+command=$HOME/.config/i3blocks/essid
+interval=2
+#INTERFACE=wlan0
+color=#008080
+
 [net]
 command=$HOME/.config/i3blocks/bandwidth
 interval=1
@@ -51,6 +57,7 @@ color=#7fffd4
 command=$HOME/.config/i3blocks/battery
 markup=pango
 interval=10
+color=#7fffd4
 
 [volume]
 label=
