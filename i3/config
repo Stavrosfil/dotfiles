@@ -212,18 +212,18 @@ bindsym $mod+Control+x exec --no-startup-id "/home/stavrosfil/.scripts/lock_and_
 bindsym $mod+Control+t		sticky toggle
 
 bar {
-#   	status_command i3blocks
+   	# status_command i3blocks
 	status_command i3blocks -c ~/.config/i3blocks/config
 	position bottom
-##	position top
-##	i3bar_command i3bar -t
-##	status_command i3status
+#	position top
+#	i3bar_command i3bar -t
+#	status_command i3status
 	font pango:Ubuntu Mono 10
 	strip_workspace_numbers yes
 	separator_symbol "/"
 	#height 28
 	colors {
-##		background              #1d2021A0
+#		background              #1d2021A0
 		background              #282c34
 		statusline              #CFD8DC
         	separator               #3b84c0
