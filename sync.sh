@@ -48,6 +48,7 @@ if [ "$already_setup" != true ]; then
 	ln -sv $DOTS/.zshrc $HOME/
 	sudo ln -sv $DOTS/X11/xorg.conf /etc/X11/
 	sudo ln -sv $DOTS/X11/xorg.conf.d /etc/X11/
+	ln -sv $DOTS/.clang-format $HOME
 	# ln -sv $DOTS/wall.png $HOME/Pictures/
 fi
 

@@ -1,0 +1,8 @@
+BasedOnStyle: LLVM
+IndentWidth: 4
+AllowShortIfStatementsOnASingleLine: false
+UseTab: Never
+IndentCaseLabels: false
+AlignConsecutiveAssignments: true
+AlignTrailingComments: true
+BreakBeforeBraces: Stroustrup
