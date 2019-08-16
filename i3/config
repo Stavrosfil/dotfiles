@@ -193,12 +193,13 @@ bindsym $mod+u border pixel 1
 bindsym $mod+i border normal
 
 # Set custom color variables
-set $bg-color			#2f343f
+# set $bg-color			#2f343f
 set $inactive-bg-color		#2f343f
 set $text-color		        #f3f4f5
 set $inactive-text-color	#676E7D
 set $urgent-bg-color		#f08080
 set $transparent                #00000000
+set $bg-color			#00000000
 
 # Set the window colors
 #
@@ -206,7 +207,7 @@ set $transparent                #00000000
 client.focused	                $bg-color		$bg-color		$text-color		#3a5e5f
 client.unfocused                $inactive-bg-color	$inactive-bg-color	$inactive-text-color	#2f343f
 client.focused_inactive         $inactive-bg-color	$inactive-bg-color	$inactive-text-color	#2f343f
-client.urgent                   $urgent-bg-color        $urgent-bg-color        $text-color             #2f343f
+client.urgent                   $urgent-bg-color	$urgent-bg-color	$text-color             #2f343f
 
 # bindsym $mod+Control+l exec --no-startup-id "i3lock; xset dpms force off"
 bindsym $mod+Control+l exec --no-startup-id "/home/stavrosfil/.scripts/lock_and_blur.sh"
@@ -216,30 +217,30 @@ bindsym $mod+Control+x exec --no-startup-id "/home/stavrosfil/.scripts/lock_and_
 bindsym $mod+Control+t sticky toggle
 
 bar {
-        status_command SCRIPT_DIR=/usr/libexec/i3blocks i3blocks -c ~/.config/i3blocks/config
-	# status_command i3blocks -c ~/.config/i3blocks/config
-	position bottom
-	font pango:Noto Sans Display 10
-	strip_workspace_numbers yes
-	separator_symbol " | "
-	# i3bar_command i3bar -t
-	# position top
-	#height 28
+        status_command 			SCRIPT_DIR=/usr/libexec/i3blocks i3blocks -c ~/.config/i3blocks/config
+	font pango:			Noto Sans Display 10
+	strip_workspace_numbers 	yes
+	separator_symbol		" | "
+	position 			bottom
+        # i3bar_command 		i3bar -t
+	# position 			top
+	# height 				28
 	colors {
-		# background              #1d2021A0
-		# background              #282c34
-                background              $transparent
-		statusline              #CFD8DC
-        	separator               #5f9ea0
-        	focused_workspace       #5f9ea0 #5f9ea0 #e6e6fa
-        	active_workspace        $transparent $transparent #e6e6fa
-        	inactive_workspace      $transparent $transparent #CFD8DC
-		urgent_workspace        #f08080 #f08080 #e6e6fa
+		# background		#1d2021A0
+
+		background		$bg-color
+        	active_workspace	$bg-color	$bg-color	$text-color
+        	inactive_workspace	$bg-color	$bg-color	#CFD8DC
+		
+                statusline		#CFD8DC
+        	separator		#5f9ea0
+        	focused_workspace	#5f9ea0		#5f9ea0		$text-color
+		urgent_workspace	#f08080		#f08080		$text-color
         }
 }
 
 # Set wallpaper
-exec_always feh --bg-fill --auto-zoom "$HOME/repos/dotfiles/walls/wall2.jpg"
+exec_always feh --bg-fill --auto-zoom "$HOME/repos/dotfiles/walls/wall12.jpg"
 # exec_always feh --bg-fill --auto-zoom "$HOME/repos/dotfiles/wall.png"
 
 # Change language shortcuts
