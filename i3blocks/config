@@ -7,7 +7,7 @@ signal=10
 color=#81b71a
 
 [essid]
-command=$HOME/.config/i3blocks/essid
+command=INTERFACE="wlp3s0" $HOME/.config/i3blocks/essid
 interval=2
 #INTERFACE=wlan0
 color=#008080
