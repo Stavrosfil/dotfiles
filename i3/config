@@ -266,7 +266,8 @@ bindsym XF86AudioPrev exec		playerctl previous
 bindsym Print exec			gnome-screenshot
 bindsym Control+Print exec		gnome-screenshot -w
 
-bindsym Control+plus+`			nop
+exec					killall -q notify-osd && killall -q dunst
+exec --no-startup-id			dunst -config ~/.config/i3/config_dunst
 
 # Execute compton
 exec_always --no-startup-id		"killall -q compton; compton --config ~/.config/compton/compton.conf"
