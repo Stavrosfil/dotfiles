@@ -266,7 +266,8 @@ bindsym XF86AudioPrev exec		playerctl previous
 bindsym Print exec			gnome-screenshot
 bindsym Control+Print exec		gnome-screenshot -w
 
-exec					killall -q notify-osd && killall -q dunst
+exec					killall -q notify-osd
+exec					killall -q dunst
 exec --no-startup-id			dunst -config ~/.config/i3/config_dunst
 
 # Execute compton
