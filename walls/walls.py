@@ -22,17 +22,17 @@ def remove_correct_names(filesIterator, prefix):
     pl()
     for wall in filesIterator:
         if wall.is_file():
-            if not bool(re.match(prefix + r"[0-9]+.(jpg)", wall.name)):
+            if not bool(re.match(prefix + r"[0-9]+.(jpg|png)", wall.name)):
                 print(wall.name)
                 walls.append(wall.name)
     pl()
 
 
 basepath = '.'
-prefix = 'wall'
+prefix = 'wall_'
 filesIterator = os.scandir(basepath)
 walls = []
-i = 0
+i = 1
 readme = ''
 
 remove_correct_names(filesIterator, prefix)
@@ -45,7 +45,7 @@ print('Preparing to rename image files :')
 pl()
 for wall in walls:
     suffix = os.path.splitext(wall)[1]
-    if bool(re.match(r".+\.(jpg)", wall)):
+    if bool(re.match(r".+\.(jpg|png)", wall)):
         newName = prefix + str(i) + suffix
         print(wall + '\t-->\t' + newName)
         os.rename(wall, newName)
