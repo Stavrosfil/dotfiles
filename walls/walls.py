@@ -3,7 +3,7 @@ import re
 
 basepath = '.'
 prefix = 'wall_'
-
+readmeList = []
 
 def pl():
     print('----------------------------------')
@@ -29,9 +29,12 @@ def files_to_rename(prefix, extensions):
     for wall in filesIterator:
         if wall.is_file():
             # The files to rename must be image files or be already named correctly.
-            if not bool(re.match(prefix + r"[0-9]+\." + extensions, wall.name)) and bool(re.match(r".+\." + extensions, wall.name)):
-                print(wall.name)
-                walls.append(wall.name)
+            if not bool(re.match(prefix + r"[0-9]+\." + extensions, wall.name)):
+                if bool(re.match(r".+\." + extensions, wall.name)):
+                    print(wall.name)
+                    walls.append(wall.name)
+            else:
+                readmeList.append(wall.name)
     pl()
 
     # Natural sort.
@@ -50,17 +53,17 @@ def rename_files(walls):
         newName = prefix + str(i) + suffix
         print(wall + '\t-->\t' + newName)
         os.rename(wall, newName)
+        readmeList.append(newName)
         i += 1
     pl()
 
+def add_to_readme(wall):
+    pass
 
 def saveReadme(prefix, extensions):
-    filesList = os.listdir(basepath)
-    filesList.sort(key=natural_keys)
     readme = ''
-    for wall in filesList:
-        if bool(re.match(prefix + r"[0-9]+\." + extensions, wall)):
-            readme += '![img](' + wall + ')\n'
+    for wall in readmeList:
+        readme += '![img](' + wall + ')\n'
     print('Updating readme...')
     pl()
     f = open('README.md', 'w')
@@ -78,8 +81,9 @@ def main():
 
     rename_files(walls)
 
-    saveReadme(prefix, extensions)
+    readmeList.sort(key=natural_keys)
 
+    saveReadme(prefix, extensions)
 
 if __name__ == "__main__":
     main()
