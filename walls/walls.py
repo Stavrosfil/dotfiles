@@ -22,9 +22,20 @@ def remove_correct_names(filesIterator, prefix):
     pl()
     for wall in filesIterator:
         if wall.is_file():
-            if not bool(re.match(prefix + r"[0-9]+.(jpg|png)", wall.name)):
+            if not bool(re.match(prefix + r"[0-9]+\.(jpg|png)", wall.name)):
                 print(wall.name)
                 walls.append(wall.name)
+    pl()
+
+# TODO: Fix bug when there are no files to update.
+# !: If there are no files to update, readme becomes empty.
+def saveReadme():
+    print('Updating readme...')
+    pl()
+    f = open('README.md', 'w')
+    f.write(readme)
+    print(readme)
+    f.close()
     pl()
 
 
@@ -53,8 +64,4 @@ for wall in walls:
         i += 1
 pl()
 
-f = open('README.md', 'w')
-f.write(readme)
-f.close()
-
-print(readme)
+saveReadme()
