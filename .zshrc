@@ -10,7 +10,7 @@ source $HOME/antigen.zsh
 export already_setup=true
 
 # Load the oh-my-zsh's library.
-antigen use oh-my-zsh
+# antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle zsh-users/zsh-autosuggestions
@@ -56,7 +56,7 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
 # Custom cd functinallity
 custom_cd() {
@@ -85,7 +85,8 @@ export PATH="$HOME/tools/flutter/bin:$PATH"
 export PATH="$HOME/.scripts:$PATH"
 export PATH="${PATH}:${HOME}/.local/bin/"
 export IDF_PATH="$HOME/esp/esp-idf"
-export TERM=xterm
+export TERM=xterm-256color
+# export TERM=xterm
 
 # Aliases
 alias cl="clear"
@@ -122,8 +123,6 @@ za() {
     zathura $1 &
     disown
 }
-
-export TERM=xterm-256color
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
