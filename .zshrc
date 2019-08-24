@@ -83,6 +83,7 @@ alias cd="custom_cd"
 export PATH="$HOME/tools/android-studio/bin:$PATH"
 export PATH="$HOME/tools/flutter/bin:$PATH"
 export PATH="$HOME/.scripts:$PATH"
+export PATH="$HOME/tools/flutter/bin:$PATH"
 export PATH="${PATH}:${HOME}/.local/bin/"
 export IDF_PATH="$HOME/esp/esp-idf"
 export TERM=xterm-256color
