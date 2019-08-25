@@ -22,6 +22,10 @@ def natural_keys(text):
     return [atoi(c) for c in re.split(r'(\d+)', text)]
 
 
+def matches_name(name):
+    return bool(re.match(prefix + r"[0-9]+\." + extensions, name))
+
+
 def files_to_rename(prefix, extensions):
     walls = []
     maxNum = 1
@@ -33,7 +37,7 @@ def files_to_rename(prefix, extensions):
     for wall in filesIterator:
         if wall.is_file():
             # The files to rename must be image files or be already named correctly.
-            if not bool(re.match(prefix + r"[0-9]+\." + extensions, wall.name)):
+            if not matches_name(wall.name):
                 if bool(re.match(r".+\." + extensions, wall.name)):
                     walls.append(wall.name)
             else:
@@ -84,7 +88,7 @@ def saveReadme():
     readmeList = os.listdir(basepath)
     readmeList.sort(key=natural_keys)
     for wall in readmeList:
-        if bool(re.match(prefix + r"[0-9]+\." + extensions, wall)):
+        if matches_name(wall):
             readme += '### ' + wall + '\n'
             readme += '![img](' + wall + ')\n'
     print('Updating readme...')
