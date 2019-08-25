@@ -24,6 +24,7 @@ def natural_keys(text):
 
 def files_to_rename(prefix, extensions):
     walls = []
+    maxNum = 1
     filesIterator = os.scandir(basepath)
 
     print('\nFiles not matching :')
@@ -32,11 +33,11 @@ def files_to_rename(prefix, extensions):
     for wall in filesIterator:
         if wall.is_file():
             # The files to rename must be image files or be already named correctly.
-            # if not bool(re.match(prefix + r"[0-9]+\." + extensions, wall.name)):
-            if bool(re.match(r".+\." + extensions, wall.name)):
-                walls.append(wall.name)
-            # else:
-                # readmeList.append(wall.name)
+            if not bool(re.match(prefix + r"[0-9]+\." + extensions, wall.name)):
+                if bool(re.match(r".+\." + extensions, wall.name)):
+                    walls.append(wall.name)
+            else:
+                maxNum = max(int(re.split(r'(\d+)', wall.name)[1]), maxNum)
 
     # Natural sort.
     # Also see natsort package.
@@ -45,14 +46,14 @@ def files_to_rename(prefix, extensions):
     print(walls)
 
     pl()
-    
-    return walls
+
+    return (walls, maxNum)
 
 
 # TODO: Fix new file rename if an old one gets deleted.
-def rename_files(walls):
-    i, j = 1, 1
-    readmeList, tempFiles = [], []
+def rename_files(walls, maxNum):
+    i, j = maxNum + 1, 1
+    tempFiles = []
 
     print('Preparing to rename image files :')
     pl()
@@ -69,23 +70,23 @@ def rename_files(walls):
         newName = prefix + str(i) + suffix
         print(wall + '\t-->\t' + newName)
         os.rename(wall, newName)
-        readmeList.append(newName)
         i += 1
 
     pl()
-
-    # The list returned is already sorted
-    return readmeList
 
 
 def add_to_readme(wall):
     pass
 
 
-def saveReadme(readmeList):
+def saveReadme():
     readme = ''
+    readmeList = os.listdir(basepath)
+    readmeList.sort(key=natural_keys)
     for wall in readmeList:
-        readme += '![img](' + wall + ')\n'
+        if bool(re.match(prefix + r"[0-9]+\." + extensions, wall)):
+            readme += '### ' + wall + '\n'
+            readme += '![img](' + wall + ')\n'
     print('Updating readme...')
     pl()
     f = open('README.md', 'w')
@@ -98,12 +99,12 @@ def saveReadme(readmeList):
 def main():
 
     # Get the sorted walls list to rename.
-    walls = files_to_rename(prefix, extensions)
+    walls, maxNum = files_to_rename(prefix, extensions)
 
     # Rename the files using the sorted list
-    readmeList = rename_files(walls)
+    rename_files(walls, maxNum)
 
-    saveReadme(readmeList)
+    saveReadme()
 
 
 if __name__ == "__main__":
