@@ -89,7 +89,7 @@ def saveReadme():
     readmeList.sort(key=natural_keys)
     for wall in readmeList:
         if matches_name(wall):
-            readme += '### ' + wall + '\n'
+            readme += '* ### ' + wall + '\n'
             readme += '![img](' + wall + ')\n'
     print('Updating readme...')
     pl()
