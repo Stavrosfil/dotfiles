@@ -227,7 +227,6 @@ bar {
 	# height 				28
 	colors {
 		# background		#1d2021A0
-
 		background		$bg-color
         	active_workspace	$bg-color	$bg-color	$text-color
         	inactive_workspace	$bg-color	$bg-color	#CFD8DC
