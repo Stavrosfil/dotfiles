@@ -222,7 +222,7 @@ bar {
 	strip_workspace_numbers 	yes
 	separator_symbol		" | "
 	position 			bottom
-        # i3bar_command 		i3bar -t
+        i3bar_command 		        i3bar -t
 	# position 			top
 	# height 				28
 	colors {
@@ -239,7 +239,7 @@ bar {
 }
 
 # Set wallpaper
-exec_always				feh --bg-fill --auto-zoom "$HOME/repos/dotfiles/walls/wall_12.jpg"
+exec_always				feh --bg-fill --auto-zoom "$HOME/repos/dotfiles/walls/wall_10.jpg"
 # exec_always feh --bg-fill --auto-zoom "$HOME/repos/dotfiles/wall.png"
 
 # Change language shortcuts
