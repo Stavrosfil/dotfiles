@@ -99,7 +99,29 @@ alias dot="$HOME/repos/dotfiles/"
 alias userpackages="comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)"
 alias sync="bash $HOME/repos/dotfiles/sync.sh"
 alias pip="pip3"
-alias rm="rm -rf"
+alias mexec="chmod a+x"
+alias vi="vim"
+
+### file browsing
+# list files
+alias ll="ls -Ahl"
+
+# fast find
+ff () {
+    find . -name "$1"
+}
+
+### file manipulation
+# remove
+alias rm="rm -rfv"
+alias rmi="rm -rfvi"
+
+# copy
+alias cp="cp -rfv"
+
+# move
+alias mv="mv -fv"
+alias mvi="mv -fvi"
 
 # History directory navigation
 d='dirs -v | head -10'
