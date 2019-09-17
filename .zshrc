@@ -80,6 +80,7 @@ alias cd="custom_cd"
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
+export PATH="$HOME/tools/cubemx/STM32CubeMX/:$PATH"
 export PATH="$HOME/tools/android-studio/bin:$PATH"
 export PATH="$HOME/tools/flutter/bin:$PATH"
 export PATH="$HOME/.scripts:$PATH"
@@ -91,7 +92,7 @@ export TERM=xterm-256color
 
 # Aliases
 alias cl="clear"
-alias cubemx="tools/cubemx/STM32CubeMX"
+# alias cubemx="tools/cubemx/STM32CubeMX"
 alias zcon="vi $HOME/.zshrc"
 alias cfi="vi $HOME/.config/i3/config"
 alias ser="ssh stavrosfil@23.97.181.92 -p 1999"
