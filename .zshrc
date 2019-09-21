@@ -86,7 +86,8 @@ export PATH="$HOME/tools/flutter/bin:$PATH"
 export PATH="$HOME/.scripts:$PATH"
 export PATH="$HOME/tools/flutter/bin:$PATH"
 export PATH="${PATH}:${HOME}/.local/bin/"
-export IDF_PATH="$HOME/esp/esp-idf"
+# export IDF_PATH="$HOME/esp/esp-idf"
+export IDF_PATH="$HOME/esp/ESP8266_RTOS_SDK"
 export TERM=xterm-256color
 # export TERM=xterm
 

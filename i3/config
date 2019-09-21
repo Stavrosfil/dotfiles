@@ -222,7 +222,7 @@ bar {
 	strip_workspace_numbers 	yes
 	separator_symbol		" | "
 	position 			bottom
-        i3bar_command 		        i3bar -t
+        # i3bar_command                 i3bar -t
 	# position 			top
 	# height 				28
 	colors {
