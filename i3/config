@@ -167,10 +167,10 @@ mode "resize" {
         bindsym semicolon resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 50 px or 10 ppt
+        bindsym Down resize grow height 50 px or 10 ppt
+        bindsym Up resize shrink height 50 px or 10 ppt
+        bindsym Right resize grow width 50 px or 10 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -182,7 +182,8 @@ bindsym $mod+r mode "resize"
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 new_window 1pixel
-new_float normal
+# new_float normal
+new_float pixel 5
 
 # Hide borders
 hide_edge_borders none
@@ -239,7 +240,7 @@ bar {
 }
 
 # Set wallpaper
-exec_always				feh --bg-fill --auto-zoom "$HOME/repos/dotfiles/walls/wall_10.jpg"
+exec_always				feh --bg-fill --auto-zoom "$HOME/repos/dotfiles/walls/wall_9.jpg"
 # exec_always feh --bg-fill --auto-zoom "$HOME/repos/dotfiles/wall.png"
 
 # Change language shortcuts
@@ -271,3 +272,13 @@ exec_always     			dunst -config ~/.config/i3/config_dunst
 
 # Execute compton
 exec_always --no-startup-id		"killall -q compton; compton --config ~/.config/compton/compton.conf"
+
+# Scratchpad window
+# for_window [instance="kitty" title="Life"] resize grow left 300, resize grow right 300, resize grow down 150, resize grow up 100, move scratchpad;
+bindsym $mod+p resize shrink left 300, resize shrink right 300, resize shrink down 300, resize shrink up 300
+
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show

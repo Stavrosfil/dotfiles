@@ -139,8 +139,7 @@ d='dirs -v | head -10'
 
 wal-tile() {
     wal -n -i "$@"
-    #feh --bg-fill --auto-zoom "$HOME/Pictures/firewatch.png"
-    feh --bg-fill --auto-zoom "$(<"${HOME}/Pictures/firewatch.png")"
+    feh --bg-tile "$(< "${HOME}/.cache/wal/wal")"
 }
 
 # Open files with zathura and disown
