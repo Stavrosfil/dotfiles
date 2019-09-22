@@ -275,7 +275,9 @@ exec_always --no-startup-id		"killall -q compton; compton --config ~/.config/com
 
 # Scratchpad window
 # for_window [instance="kitty" title="Life"] resize grow left 300, resize grow right 300, resize grow down 150, resize grow up 100, move scratchpad;
-bindsym $mod+p resize shrink left 300, resize shrink right 300, resize shrink down 300, resize shrink up 300
+bindsym $mod+p floating enable, resize shrink left 150, resize shrink right 150, resize shrink down 150, resize shrink up 150
+bindsym $mod+Shift+p floating enable, resize grow left 150, resize grow right 150, resize grow down 150, resize grow up 150
+bindsym $mod+Shift+Return exec kitty, floating enable, resize shrink left 300, resize shrink right 300, resize shrink down 300, resize shrink up 300
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
