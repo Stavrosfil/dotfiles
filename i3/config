@@ -284,3 +284,5 @@ bindsym $mod+Shift+minus move scratchpad
 
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
+
+bindsym $mod+b exec qutebrowser
