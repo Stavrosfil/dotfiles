@@ -1,0 +1,18 @@
+$hotkey list
+# Kicad Manager Hotkeys
+[common]
+shortcut   "Ctrl+N":    "New Project"
+shortcut   "Ctrl+T":    "New Project From Template"
+shortcut   "Ctrl+O":    "Open Project"
+shortcut   "Ctrl+R":    "Refresh Project Tree"
+shortcut   "Ctrl+F1":    "List Hotkeys"
+shortcut   "Ctrl+,":    "Preferences"
+shortcut   "Ctrl+E":    "Run Eeschema"
+shortcut   "Ctrl+L":    "Run LibEdit"
+shortcut   "Ctrl+P":    "Run Pcbnew"
+shortcut   "Ctrl+F":    "Run FpEditor"
+shortcut   "Ctrl+G":    "Run Gerbview"
+shortcut   "Ctrl+B":    "Run Bitmap2Component"
+shortcut   "Ctrl+A":    "Run PcbCalculator"
+shortcut   "Ctrl+Y":    "Run PlEditor"
+$Endlist

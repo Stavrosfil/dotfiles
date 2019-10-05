@@ -50,6 +50,7 @@ if [ "$already_setup" != true ]; then
 	sudo ln -sv $DOTS/X11/xorg.conf.d /etc/X11/
 	ln -sv $DOTS/.clang-format $HOME
 	ln -sv $DOTS/repos/dotfiles/qutebrowser $HOME/.config
+	ln -sv $DOTS/repos/dotfiles/kicad $HOME/.config
 	# ln -sv $DOTS/wall.png $HOME/Pictures/
 fi
 

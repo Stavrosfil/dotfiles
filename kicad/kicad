@@ -1,0 +1,17 @@
+KicadFramePos_x=1920
+KicadFramePos_y=24
+KicadFrameSize_x=1918
+KicadFrameSize_y=1030
+KicadFrameMaximized=0
+KicadFramePerspective=layout2|name=MainToolbar;caption=;state=139644;dir=1;layer=6;row=0;pos=0;prop=100000;bestw=273;besth=36;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=ProjectTree;caption=;state=508;dir=4;layer=3;row=0;pos=0;prop=100000;bestw=191;besth=-1;minw=150;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=Launcher;caption=;state=139644;dir=1;layer=1;row=0;pos=0;prop=100000;bestw=525;besth=70;minw=525;minh=70;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=MsgPanel;caption=;state=131452;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=96;besth=35;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|dock_size(1,6,0)=36|dock_size(4,3,0)=191|dock_size(1,1,0)=70|dock_size(5,0,0)=96|
+KicadFrameMostRecentlyUsedPath=/home/stavrosfil/repos/obc-pcb/
+LeftWinWidth=191
+file1=/home/stavrosfil/repos/obc-pcb/obc.pro
+file2=/home/stavrosfil/repos/su-pcb/su-pcb.pro
+file3=/home/stavrosfil/repos/su_pcb/su/su.pro
+file4=
+file5=
+file6=
+file7=
+file8=
+file9=
