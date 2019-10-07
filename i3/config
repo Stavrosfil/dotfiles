@@ -264,7 +264,7 @@ bindsym XF86AudioPrev exec		playerctl previous
 
 # Screen shot key bindings
 bindsym Print exec			gnome-screenshot
-bindsym Control+Print exec		gnome-screenshot -w
+bindsym Control+Print exec		gnome-screenshot -i
 
 exec_always     			killall notify-osd
 exec_always     			killall dunst
@@ -286,3 +286,9 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 bindsym $mod+b exec qutebrowser
+
+# move focused container to other screen
+bindsym $mod+KP_Right move workspace to output right
+bindsym $mod+KP_Left move workspace to output left
+bindsym $mod+KP_Up move workspace to output up
+bindsym $mod+KP_Down move workspace to output down
