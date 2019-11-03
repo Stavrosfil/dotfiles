@@ -86,6 +86,7 @@ export PATH="$HOME/tools/flutter/bin:$PATH"
 export PATH="$HOME/.scripts:$PATH"
 export PATH="$HOME/tools/flutter/bin:$PATH"
 export PATH="${PATH}:${HOME}/.local/bin/"
+export JAVA_HOME="${HOME}/tools/jdk-13/"
 # export IDF_PATH="$HOME/esp/esp-idf"
 export IDF_PATH="$HOME/esp/ESP8266_RTOS_SDK"
 export TERM=xterm-256color
@@ -109,7 +110,7 @@ alias vi="vim"
 alias ll="ls -Ahl"
 
 # fast find
-ff () {
+ff() {
     find . -name "$1"
 }
 
@@ -139,7 +140,7 @@ d='dirs -v | head -10'
 
 wal-tile() {
     wal -n -i "$@"
-    feh --bg-tile "$(< "${HOME}/.cache/wal/wal")"
+    feh --bg-tile "$(<"${HOME}/.cache/wal/wal")"
 }
 
 # Open files with zathura and disown
