@@ -181,7 +181,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window 1pixel
+new_window none
 # new_float normal
 new_float pixel 5
 
@@ -217,27 +217,32 @@ bindsym $mod+Control+x exec --no-startup-id "/home/stavrosfil/.scripts/lock_and_
 
 bindsym $mod+Control+t sticky toggle
 
-bar {
-        status_command 			SCRIPT_DIR=/usr/libexec/i3blocks i3blocks -c ~/.config/i3blocks/config
-	font pango:			Noto Sans Display 10
-	strip_workspace_numbers 	yes
-	separator_symbol		" | "
-	position 			bottom
-        # i3bar_command                 i3bar -t
-	# position 			top
-	# height 				28
-	colors {
-		# background		#1d2021A0
-		background		$bg-color
-        	active_workspace	$bg-color	$bg-color	$text-color
-        	inactive_workspace	$bg-color	$bg-color	#CFD8DC
+# bar {
+#         status_command 			SCRIPT_DIR=/usr/libexec/i3blocks i3blocks -c ~/.config/i3blocks/config
+# 	font pango:			Noto Sans Display 10
+# 	strip_workspace_numbers 	yes
+# 	separator_symbol		" | "
+# 	position 			bottom
+#         # i3bar_command                 i3bar -t
+# 	# position 			top
+# 	# height 				28
+# 	colors {
+# 		# background		#1d2021A0
+# 		background		$bg-color
+#         	active_workspace	$bg-color	$bg-color	$text-color
+#         	inactive_workspace	$bg-color	$bg-color	#CFD8DC
 		
-                statusline		#CFD8DC
-        	separator		#5f9ea0
-        	focused_workspace	#5f9ea0		#5f9ea0		$text-color
-		urgent_workspace	#f08080		#f08080		$text-color
-        }
-}
+#                 statusline		#CFD8DC
+#         	separator		#5f9ea0
+#         	focused_workspace	#5f9ea0		#5f9ea0		$text-color
+# 		urgent_workspace	#f08080		#f08080		$text-color
+#         }
+# }
+
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+bindsym $mod+z			gaps inner current plus 5
+bindsym $mod+Shift+z		gaps inner current minus 5
 
 # Set wallpaper
 exec_always				feh --bg-fill --auto-zoom "$HOME/repos/dotfiles/walls/wall_9.jpg"
