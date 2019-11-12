@@ -41,7 +41,7 @@ antigen apply
 ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -57,6 +57,9 @@ ENABLE_CORRECTION="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # source $ZSH/oh-my-zsh.sh
+
+# GEOMETRY_PROMPT=(geometry_status geometry_path geometry_git) # redefine left prompt
+# GEOMETRY_RPROMPT=(geometry_exec_time pwd)                    # append exec_time and pwd right prompt
 
 # Custom cd functinallity
 custom_cd() {
