@@ -9,7 +9,7 @@ snap-packages.txt xargs sudo snap install
 sudo apt install $(grep -vE "^\s*#" apt-packages.txt | tr "\n" " ")
 
 # Install antigen for zsh
-curl -L git.io/antigen > antigen.zsh
+curl -L git.io/antigen >antigen.zsh
 
 # Dotfiles location
 DOTS="$HOME/repos/dotfiles"
@@ -51,6 +51,7 @@ if [ "$already_setup" != true ]; then
 	ln -sv $DOTS/.clang-format $HOME
 	ln -sv $DOTS/repos/dotfiles/qutebrowser $HOME/.config
 	ln -sv $DOTS/repos/dotfiles/kicad $HOME/.config
+	ln -sv $DOTS/repos/dotfiles/polybar $HOME/.config
 	# ln -sv $DOTS/wall.png $HOME/Pictures/
 fi
 
