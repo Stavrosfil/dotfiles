@@ -245,7 +245,7 @@ bindsym $mod+z			gaps inner current plus 5
 bindsym $mod+Shift+z		gaps inner current minus 5
 
 # Set wallpaper
-exec_always				feh --bg-fill --auto-zoom "$HOME/repos/dotfiles/walls/wall_9.jpg"
+exec_always				feh --bg-fill --auto-zoom "$HOME/repos/dotfiles/walls/wall_16.jpg"
 # exec_always feh --bg-fill --auto-zoom "$HOME/repos/dotfiles/wall.png"
 
 # Change language shortcuts
