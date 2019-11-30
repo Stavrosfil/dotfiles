@@ -30,7 +30,7 @@ font pango:Noto Sans Display 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -194,20 +194,20 @@ bindsym $mod+u border pixel 1
 bindsym $mod+i border normal
 
 # Set custom color variables
-# set $bg-color			#2f343f
-set $inactive-bg-color		#2f343f
+set $bg-color			#2f343f
+set $inactive-bg-color		#252932
 set $text-color		        #f3f4f5
 set $inactive-text-color	#676E7D
 set $urgent-bg-color		#f08080
 set $transparent                #00000000
-set $bg-color			#00000000
+# set $bg-color			#00000000
 
 # Set the window colors
 #
 # action	                border			background		text			indicator
 client.focused	                $bg-color		$bg-color		$text-color		#3a5e5f
 client.unfocused                $inactive-bg-color	$inactive-bg-color	$inactive-text-color	#2f343f
-client.focused_inactive         $inactive-bg-color	$inactive-bg-color	$inactive-text-color	#2f343f
+client.focused_inactive         $bg-color	        $bg-color	        $text-color	        #2f343f
 client.urgent                   $urgent-bg-color	$urgent-bg-color	$text-color             #2f343f
 
 # bindsym $mod+Control+l exec --no-startup-id "i3lock; xset dpms force off"
@@ -243,6 +243,11 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 bindsym $mod+z			gaps inner current plus 5
 bindsym $mod+Shift+z		gaps inner current minus 5
+
+bindsym $mod+x                  gaps inner all set 10
+bindsym $mod+Shift+x            gaps inner all set 0
+
+exec smart_borders on
 
 # Set wallpaper
 exec_always				feh --bg-fill --auto-zoom "$HOME/repos/dotfiles/walls/wall_16.jpg"
