@@ -302,3 +302,15 @@ bindsym $mod+KP_Right move workspace to output right
 bindsym $mod+KP_Left move workspace to output left
 bindsym $mod+KP_Up move workspace to output up
 bindsym $mod+KP_Down move workspace to output down
+
+# take a screenshot of a screen region and copy it to a clipboard
+# bindsym --release $mod+Shift+o exec "$HOME/.scripts/screen.sh -s $HOME/pictures/screenshots/"
+
+# take a screenshot of a whole window and copy it to a clipboard
+# bindsym --release $mod+o exec "$HOME/.scripts/screen.sh $HOME/pictures/screenshots/"
+
+# Multi-screen screenshots with scrot
+bindsym --release $mod+o exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # All screens
+
+# OSX-like area selection screenshots
+bindsym --release $mod+Shift+o exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # Area selection
