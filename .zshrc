@@ -150,6 +150,7 @@ wal-tile() {
 za() {
     zathura $1 &
     disown
+    kill $PPID
 }
 
 # . $HOME/esp/esp-idf/export.sh
