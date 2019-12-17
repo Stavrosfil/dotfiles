@@ -255,7 +255,7 @@ exec_always				feh --bg-fill --auto-zoom "$HOME/repos/dotfiles/walls/wall_16.jpg
 
 # Change language shortcuts
 exec_always --no-startup-id		"setxkbmap -layout us,gr"
-exec_always --no-startup-id		"setxkbmap -option 'grp:alt_space_toggle'"
+exec_always --no-startup-id		"setxkbmap -option 'grp:alt_shift_toggle'"
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec	pactl set-sink-volume @DEFAULT_SINK@ +5%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
