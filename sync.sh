@@ -36,7 +36,7 @@ if [ "$already_setup" != true ]; then
 
 	# Symbolic links!
 	ln -sv $DOTS/.scripts $HOME/
-	ln -sv $DOTS/compton $HOME/.config/
+	ln -sv $DOTS/picom $HOME/.config/
 	ln -sv $DOTS/i3 $HOME/.config/
 	ln -sv $DOTS/i3blocks $HOME/.config/
 	ln -sv $DOTS/kitty $HOME/.config
