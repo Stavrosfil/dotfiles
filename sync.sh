@@ -38,7 +38,7 @@ if [ "$already_setup" != true ]; then
 	ln -sv $DOTS/.scripts $HOME/
 	ln -sv $DOTS/picom $HOME/.config/
 	ln -sv $DOTS/i3 $HOME/.config/
-	ln -sv $DOTS/i3blocks $HOME/.config/
+	# ln -sv $DOTS/i3blocks $HOME/.config/
 	ln -sv $DOTS/kitty $HOME/.config
 	ln -sv $DOTS/ranger $HOME/.config
 	ln -sv $DOTS/rofi $HOME/.config/
