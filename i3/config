@@ -266,6 +266,7 @@ bindsym XF86AudioMute exec		pactl set-sink-mute @DEFAULT_SINK@ toggle
 # Do not forget to set X11 config correctly for this to properly work
 bindsym XF86MonBrightnessUp exec	xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec	xbacklight -dec 5 #screen brightness
+bindsym Shift+XF86MonBrightnessDown exec	xbacklight -set 1 
 
 # Media player controls
 bindsym XF86AudioPause exec		playerctl play-pause
