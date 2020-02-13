@@ -93,8 +93,8 @@ export PATH="${PATH}:${HOME}/.local/bin/"
 export ANDROID_HOME="$HOME/android-sdk"
 # export IDF_PATH="$HOME/esp/esp-idf"
 export IDF_PATH="$HOME/esp/ESP8266_RTOS_SDK"
-# export TERM=xterm-256color
-export TERM=xterm-kitty
+export TERM=xterm-256color
+# export TERM=xterm-kitty
 # export TERM=xterm
 
 # Aliases
