@@ -181,16 +181,16 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window none
+# new_window none
 # new_float normal
-new_float pixel 5
+# new_float pixel 5
 
 # Hide borders
-hide_edge_borders none
+# hide_edge_borders none
 
 # change borders
 bindsym $mod+y border none
-bindsym $mod+u border pixel 1
+bindsym $mod+u border pixel 2
 bindsym $mod+i border normal
 
 # Set custom color variables
@@ -204,9 +204,9 @@ set $transparent                #00000000
 
 # Set the window colors
 #
-# action	                border			background		text			indicator
-client.focused	                $bg-color		$bg-color		$text-color		#3a5e5f
-client.unfocused                $inactive-bg-color	$inactive-bg-color	$inactive-text-color	#2f343f
+# action	                border			background		text			indicator       border
+client.focused	                $bg-color		$bg-color		$text-color		#3a5e5f         #b0c4de
+client.unfocused                $inactive-bg-color	$inactive-bg-color	$inactive-text-color	#2f343f         #7b91ad
 client.focused_inactive         $bg-color	        $bg-color	        $text-color	        #2f343f
 client.urgent                   $urgent-bg-color	$urgent-bg-color	$text-color             #2f343f
 
@@ -225,15 +225,20 @@ bindsym $mod+Shift+z		gaps inner current minus 5
 bindsym $mod+x                  gaps inner all set 10
 bindsym $mod+Shift+x            gaps inner all set 0
 
-exec smart_borders on
+for_window [class=".*"] border pixel 2
+gaps inner 10
+gaps outer 0
+
+smart_borders on
 
 # Set wallpaper
-exec_always				feh --bg-fill --auto-zoom "$HOME/repos/dotfiles/walls/wall_27.jpg"
+set                                     $bg_image $HOME/repos/dotfiles/walls/wall_29.jpg
+exec_always				feh --bg-fill --auto-zoom $bg_image
 # exec_always feh --bg-fill --auto-zoom "$HOME/repos/dotfiles/wall.png"
 
 # Change language shortcuts
-exec_always --no-startup-id		"setxkbmap -layout us,gr"
-exec_always --no-startup-id		"setxkbmap -option 'grp:alt_shift_toggle'"
+exec_always		                "setxkbmap -layout us,gr"
+exec_always		                "setxkbmap -option 'grp:alt_shift_toggle'"
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec	pactl set-sink-volume @DEFAULT_SINK@ +5%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
@@ -242,8 +247,8 @@ bindsym XF86AudioMute exec		pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # Sreen brightness controls
 # Do not forget to set X11 config correctly for this to properly work
-bindsym XF86MonBrightnessUp exec	xbacklight -inc 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec	xbacklight -dec 5 #screen brightness
+bindsym XF86MonBrightnessUp exec	        xbacklight -inc 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec	        xbacklight -dec 5 #screen brightness
 bindsym Shift+XF86MonBrightnessDown exec	xbacklight -set 1 
 
 # Media player controls
@@ -252,12 +257,12 @@ bindsym XF86AudioNext exec		playerctl next
 bindsym XF86AudioPrev exec		playerctl previous
 
 # Screen shot key bindings
-bindsym Print exec			gnome-screenshot
-bindsym Control+Print exec		gnome-screenshot -i
+# bindsym Print exec			gnome-screenshot
+# bindsym Control+Print exec		gnome-screenshot -i
 
-exec_always     			killall notify-osd
-exec_always     			killall dunst
-exec_always     			dunst -config ~/.config/i3/config_dunst
+# exec_always     			killall notify-osd
+# exec_always     			killall dunst
+# exec_always     			dunst -config ~/.config/i3/config_dunst
 
 # Execute compton
 exec_always --no-startup-id		"killall -q picom; picom --config ~/.config/picom/picom.conf"
@@ -274,7 +279,8 @@ bindsym $mod+Shift+minus move scratchpad
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
 
-bindsym $mod+b exec qutebrowser
+bindsym $mod+b exec firefox
+bindsym $mod+c exec codec
 
 # move focused container to other screen
 bindsym $mod+KP_Right move workspace to output right
