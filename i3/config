@@ -30,7 +30,8 @@ font pango:Noto Sans Display 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -265,7 +266,7 @@ bindsym XF86AudioPrev exec		playerctl previous
 # exec_always     			dunst -config ~/.config/i3/config_dunst
 
 # Execute compton
-exec_always --no-startup-id		"killall -q picom; picom --config ~/.config/picom/picom.conf"
+# exec_always --no-startup-id		"killall -q picom; picom --config ~/.config/picom/picom.conf"
 
 # Scratchpad window
 # for_window [instance="kitty" title="Life"] resize grow left 300, resize grow right 300, resize grow down 150, resize grow up 100, move scratchpad;
