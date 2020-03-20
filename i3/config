@@ -30,7 +30,6 @@ font pango:Noto Sans Display 10
 floating_modifier $mod
 
 # start a terminal
-# bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec kitty
 
 # kill focused window
@@ -281,7 +280,7 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 bindsym $mod+b exec firefox
-bindsym $mod+c exec codec
+bindsym $mod+c exec code
 
 # move focused container to other screen
 bindsym $mod+KP_Right move workspace to output right
