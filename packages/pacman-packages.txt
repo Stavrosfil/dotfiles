@@ -1,0 +1,11 @@
+rofi
+feh
+polybar
+kitty
+firefox
+playerctl
+httpie
+maim
+zathura
+zathura-pdf-mupdf
+adobe-source-code-pro-fonts

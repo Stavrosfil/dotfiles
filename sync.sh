@@ -1,12 +1,13 @@
 #!/bin/bash
 
-cd $HOME
-
 # Install all snap packages
 # snap-packages.txt xargs sudo snap install
 
 # Install packages from a file, and remove all the comments inside!
 # sudo apt install $(grep -vE "^\s*#" apt-packages.txt | tr "\n" " ")
+sudo pacman -S - <packages/pacman-packages.txt
+
+cd $HOME
 
 # Install antigen for zsh
 curl -L git.io/antigen >antigen.zsh
@@ -22,6 +23,11 @@ chsh -s $(which zsh)
 echo "Setting up repos directories"
 
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+
+# Set auto timezone
+timedatectl set-ntp true
+
+sudo pacman
 
 # cd $HOME
 # rm -rf .scripts .zshrc .vimrc
