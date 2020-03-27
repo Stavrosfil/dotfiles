@@ -21,6 +21,8 @@ chsh -s $(which zsh)
 # if [ "$already_setup" != true ]; then
 echo "Setting up repos directories"
 
+git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+
 # cd $HOME
 # rm -rf .scripts .zshrc .vimrc
 # cd .config
@@ -47,8 +49,8 @@ ln -sfnv $DOTS/.clang-format $HOME
 ln -sfnv $DOTS/qutebrowser $HOME/.config
 ln -sfnv $DOTS/kicad $HOME/.config
 ln -sfnv $DOTS/polybar $HOME/.config
-sudo ln -sfnv $DOTS/X11/xorg.conf /etc/X11/
-sudo ln -sfnv $DOTS/X11/xorg.conf.d /etc/X11/
+# sudo ln -sfnv $DOTS/X11/xorg.conf /etc/X11/
+# sudo ln -sfnv $DOTS/X11/xorg.conf.d /etc/X11/
 
 # ln -sv $DOTS/wall.png $HOME/Pictures/
 # ln -sv $DOTS/i3blocks $HOME/.config/

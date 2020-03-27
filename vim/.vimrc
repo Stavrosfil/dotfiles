@@ -127,12 +127,16 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'tpope/vim-surround'
 Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'dracula/vim'
 Plug 'dense-analysis/ale'
 Plug 'scrooloose/nerdtree'
-Plug 'joshdick/onedark.vim'
-Plug 'sonph/onehalf'
-Plug 'ntk148v/vim-horizon'
+
+Plug 'chriskempson/base16-vim'
+
+" Plug 'dracula/vim'
+" Plug 'joshdick/onedark.vim'
+" Plug 'sonph/onehalf'
+" Plug 'ntk148v/vim-horizon'
+
 
 " Initialize plug system.
 call plug#end()
@@ -144,8 +148,11 @@ if exists('+termguicolors')
 	set termguicolors
 endif
 
-colorscheme 	horizon
+colorscheme base16-horizon-dark
+
+"colorscheme 	horizon
 "colorscheme 	halfdark
+
 
 " Use Control + n to toggle the directories.
 map <C-n> :NERDTreeToggle<CR>

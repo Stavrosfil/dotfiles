@@ -96,7 +96,7 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # Enable floating by default
-for_window [class="Skype"] floating enable
+for_window [class="Android Emulator"] floating enable
 
 # FORMAT 1
 # set $ws1        "1 Terminals "
@@ -281,6 +281,7 @@ bindsym $mod+minus scratchpad show
 
 bindsym $mod+b exec firefox
 bindsym $mod+c exec code
+bindsym $mod+o exec pcmanfm
 
 # move focused container to other screen
 bindsym $mod+KP_Right move workspace to output right
@@ -295,7 +296,8 @@ bindsym $mod+KP_Down move workspace to output down
 # bindsym --release $mod+o exec "$HOME/.scripts/screen.sh $HOME/pictures/screenshots/"
 
 # Multi-screen screenshots with scrot
-bindsym --release $mod+o exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # All screens
+# bindsym --release $mod+o exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # All screens
 
 # OSX-like area selection screenshots
-bindsym --release $mod+Shift+o exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # Area selection
+# bindsym --release $mod+Shift+o exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # Area selection
+bindsym --release $mod+Shift+o exec maim -s | xclip -selection clipboard -t image/png

@@ -23,7 +23,9 @@ antigen bundle "MichaelAquilina/zsh-you-should-use"
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme.
-antigen theme geometry-zsh/geometry
+# antigen theme geometry-zsh/geometry
+antigen bundle mafredri/zsh-async
+antigen bundle sindresorhus/pure
 
 # Tell Antigen that you're done.
 antigen apply
@@ -89,8 +91,8 @@ export PATH="$HOME/tools/flutter/bin:$PATH"
 export PATH="$HOME/.scripts:$PATH"
 export PATH="$HOME/tools/flutter/bin:$PATH"
 export PATH="${PATH}:${HOME}/.local/bin/"
-export JAVA_HOME="/usr/lib/jvm/java-8-openjdk/"
-export ANDROID_HOME="$HOME/android-sdk"
+# export JAVA_HOME="/usr/lib/jvm/java-8-openjdk/"
+export ANDROID_HOME="$HOME/Android/Sdk"
 # export IDF_PATH="$HOME/esp/esp-idf"
 export IDF_PATH="$HOME/esp/ESP8266_RTOS_SDK"
 export TERM=xterm-256color
@@ -156,3 +158,9 @@ za() {
 }
 
 # . $HOME/esp/esp-idf/export.sh
+
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] &&
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] &&
+    eval "$("$BASE16_SHELL/profile_helper.sh")"
