@@ -31,6 +31,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec kitty
+bindsym $mod+Shift+Return exec kitty --working-directory=$(cat /tmp/whereami)
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -97,6 +98,35 @@ bindsym $mod+a focus parent
 
 # Enable floating by default
 for_window [class="Android Emulator"] floating enable
+for_window [title="alsamixer"] floating enable border pixel 1
+for_window [class="calamares"] floating enable border normal
+for_window [class="Clipgrab"] floating enable
+for_window [title="File Transfer*"] floating enable
+for_window [class="fpakman"] floating enable
+for_window [class="Galculator"] floating enable border pixel 1
+for_window [class="GParted"] floating enable border normal
+for_window [title="i3_help"] floating enable sticky enable border normal
+for_window [class="Lightdm-settings"] floating enable
+for_window [class="Lxappearance"] floating enable sticky enable border normal
+for_window [class="Manjaro-hello"] floating enable
+for_window [class="Manjaro Settings Manager"] floating enable border normal
+for_window [title="MuseScore: Play Panel"] floating enable
+for_window [class="Nitrogen"] floating enable sticky enable border normal
+for_window [class="Oblogout"] fullscreen enable
+for_window [class="octopi"] floating enable
+for_window [title="About Pale Moon"] floating enable
+for_window [class="Pamac-manager"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="qt5ct"] floating enable sticky enable border normal
+for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
+for_window [class="Simple-scan"] floating enable border normal
+for_window [class="(?i)System-config-printer.py"] floating enable border normal
+for_window [class="Skype"] floating enable border normal
+for_window [class="Timeset-gui"] floating enable border normal
+for_window [class="(?i)virtualbox"] floating enable border normal
+for_window [class="Xfburn"] floating enable
+for_window [title="Android Emulator - Pixel_3a_API_29:5554"] floating enable
+
 
 # FORMAT 1
 # set $ws1        "1 Terminals "
@@ -232,7 +262,7 @@ gaps outer 0
 smart_borders on
 
 # Set wallpaper
-set                                     $bg_image $HOME/repos/dotfiles/walls/wall_29.jpg
+set                                     $bg_image $HOME/repos/dotfiles/walls/wall_12.jpg
 exec_always				feh --bg-fill --auto-zoom $bg_image
 # exec_always feh --bg-fill --auto-zoom "$HOME/repos/dotfiles/wall.png"
 
@@ -271,7 +301,7 @@ bindsym XF86AudioPrev exec		playerctl previous
 # for_window [instance="kitty" title="Life"] resize grow left 300, resize grow right 300, resize grow down 150, resize grow up 100, move scratchpad;
 bindsym $mod+p floating enable, resize shrink left 150, resize shrink right 150, resize shrink down 150, resize shrink up 150
 bindsym $mod+Shift+p floating enable, resize grow left 150, resize grow right 150, resize grow down 150, resize grow up 150
-bindsym $mod+Shift+Return exec kitty, floating enable, resize shrink left 300, resize shrink right 300, resize shrink down 300, resize shrink up 300
+# bindsym $mod+Shift+Return exec kitty, floating enable, resize shrink left 300, resize shrink right 300, resize shrink down 300, resize shrink up 300
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -301,3 +331,5 @@ bindsym $mod+KP_Down move workspace to output down
 # OSX-like area selection screenshots
 # bindsym --release $mod+Shift+o exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # Area selection
 bindsym --release $mod+Shift+o exec maim -s | xclip -selection clipboard -t image/png
+
+bindsym $mod+m exec sleep 1 && xset dpms force off

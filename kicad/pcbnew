@@ -77,18 +77,18 @@ MagneticTracks=1
 MagneticGraphics=1
 EditActionChangesTrackWidth=0
 DragSelects=1
-PcbFramePos_x=965
-PcbFramePos_y=37
-PcbFrameSize_x=945
-PcbFrameSize_y=1033
+PcbFramePos_x=10
+PcbFramePos_y=61
+PcbFrameSize_x=1900
+PcbFrameSize_y=1009
 PcbFrameMaximized=0
 PcbFrameAutoSaveInterval=600
-PcbFramePerspective=layout2|name=MainToolbar;caption=;state=139644;dir=1;layer=6;row=0;pos=0;prop=100000;bestw=946;besth=36;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=AuxToolbar;caption=;state=139644;dir=1;layer=4;row=0;pos=0;prop=100000;bestw=946;besth=36;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=MsgPanel;caption=;state=131452;dir=3;layer=6;row=0;pos=0;prop=100000;bestw=400;besth=34;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=OptToolbar;caption=;state=139596;dir=4;layer=3;row=0;pos=0;prop=100000;bestw=36;besth=597;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=MicrowaveToolbar;caption=;state=139598;dir=2;layer=1;row=0;pos=0;prop=100000;bestw=36;besth=187;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=ToolsToolbar;caption=;state=139596;dir=2;layer=2;row=0;pos=0;prop=100000;bestw=36;besth=708;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=LayersManager;caption=Layers Manager;state=1532;dir=2;layer=3;row=0;pos=0;prop=100000;bestw=183;besth=32;minw=183;minh=32;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=183;floath=32|name=DrawFrame;caption=;state=1022;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=387;besth=181;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=DrawFrameGal;caption=;state=1020;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=987;besth=731;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|dock_size(1,6,0)=36|dock_size(1,4,0)=36|dock_size(3,6,0)=34|dock_size(4,3,0)=36|dock_size(2,2,0)=36|dock_size(2,3,0)=183|dock_size(5,0,0)=283|
+PcbFramePerspective=layout2|name=MainToolbar;caption=;state=139644;dir=1;layer=6;row=0;pos=0;prop=100000;bestw=1003;besth=42;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=AuxToolbar;caption=;state=139644;dir=1;layer=4;row=0;pos=0;prop=100000;bestw=946;besth=36;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=MsgPanel;caption=;state=131452;dir=3;layer=6;row=0;pos=0;prop=100000;bestw=400;besth=38;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=OptToolbar;caption=;state=139596;dir=4;layer=3;row=0;pos=0;prop=100000;bestw=36;besth=597;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=MicrowaveToolbar;caption=;state=139598;dir=2;layer=1;row=0;pos=0;prop=100000;bestw=36;besth=187;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=ToolsToolbar;caption=;state=139596;dir=2;layer=2;row=0;pos=0;prop=100000;bestw=36;besth=708;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=LayersManager;caption=Layers Manager;state=1532;dir=2;layer=3;row=0;pos=0;prop=100000;bestw=179;besth=32;minw=179;minh=32;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=179;floath=32|name=DrawFrame;caption=;state=1022;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=387;besth=175;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=DrawFrameGal;caption=;state=1020;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=987;besth=818;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|dock_size(1,6,0)=42|dock_size(1,4,0)=36|dock_size(3,6,0)=38|dock_size(4,3,0)=36|dock_size(2,2,0)=36|dock_size(2,3,0)=179|dock_size(5,0,0)=389|
 PcbFrameMostRecentlyUsedPath=/home/stavrosfil
 PcbFrameUnits=1
 PcbFrameShowGrid=1
 PcbFrameGridColor=rgb(97, 97, 97)
-PcbFrame_LastGridSize=15
+PcbFrame_LastGridSize=22
 PcbFrameFirstRunShown=1
 PcbFrameDevelMaxUndoItems=0
 PcbFrameGalDisplayOptionsGridStyle=0
@@ -210,10 +210,10 @@ ModEditColor4DWorksheet=rgb(72, 0, 0)
 ModEditColor4DGrid=rgba(88, 98, 113, 0.718)
 ModEditFramePos_x=965
 ModEditFramePos_y=37
-ModEditFrameSize_x=945
-ModEditFrameSize_y=1033
+ModEditFrameSize_x=941
+ModEditFrameSize_y=1029
 ModEditFrameMaximized=0
-ModEditFramePerspective=layout2|name=MainToolbar;caption=;state=139644;dir=1;layer=6;row=0;pos=0;prop=100000;bestw=980;besth=36;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=MsgPanel;caption=;state=131452;dir=3;layer=6;row=0;pos=0;prop=100000;bestw=400;besth=34;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=OptToolbar;caption=;state=139596;dir=4;layer=3;row=0;pos=0;prop=100000;bestw=36;besth=366;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=Footprints;caption=Libraries;state=2044;dir=4;layer=1;row=0;pos=0;prop=100000;bestw=376;besth=-1;minw=250;minh=400;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=ToolsToolbar;caption=;state=139596;dir=2;layer=1;row=0;pos=0;prop=100000;bestw=36;besth=418;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=LayersManager;caption=Layers Manager;state=1532;dir=2;layer=3;row=0;pos=0;prop=100000;bestw=179;besth=32;minw=179;minh=32;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=179;floath=32|name=DrawFrame;caption=;state=1022;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=387;besth=181;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=DrawFrameGal;caption=;state=1020;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=987;besth=731;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|dock_size(1,6,0)=36|dock_size(3,6,0)=34|dock_size(4,3,0)=36|dock_size(4,1,0)=378|dock_size(2,1,0)=36|dock_size(2,3,0)=179|dock_size(5,0,0)=383|
+ModEditFramePerspective=layout2|name=MainToolbar;caption=;state=139644;dir=1;layer=6;row=0;pos=0;prop=100000;bestw=946;besth=36;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=MsgPanel;caption=;state=131452;dir=3;layer=6;row=0;pos=0;prop=100000;bestw=400;besth=38;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=OptToolbar;caption=;state=139596;dir=4;layer=3;row=0;pos=0;prop=100000;bestw=36;besth=366;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=Footprints;caption=Libraries;state=2044;dir=4;layer=1;row=0;pos=0;prop=100000;bestw=376;besth=-1;minw=250;minh=400;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=ToolsToolbar;caption=;state=139596;dir=2;layer=1;row=0;pos=0;prop=100000;bestw=36;besth=418;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=LayersManager;caption=Layers Manager;state=1532;dir=2;layer=3;row=0;pos=0;prop=100000;bestw=173;besth=32;minw=173;minh=32;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=173;floath=32|name=DrawFrame;caption=;state=1022;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=387;besth=175;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=DrawFrameGal;caption=;state=1020;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=987;besth=818;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|dock_size(1,6,0)=36|dock_size(3,6,0)=38|dock_size(4,3,0)=36|dock_size(4,1,0)=283|dock_size(2,1,0)=36|dock_size(2,3,0)=173|dock_size(5,0,0)=283|
 ModEditFrameMostRecentlyUsedPath=/home/stavrosfil
 ModEditFrameUnits=1
 ModEditFrameShowGrid=1
@@ -265,7 +265,7 @@ FpEditorRefDefaultLayer=37
 FpEditorValueDefaultText=
 FpEditorValueDefaultVisibility=1
 FpEditorValueDefaultLayer=49
-ModeditLibWidth=376
+ModeditLibWidth=281
 file1=/home/stavrosfil/repos/su-pcb/su-pcb.kicad_pcb
 file2=/home/stavrosfil/repos/su-pcb/su-pcb/su-pcb.kicad_pcb
 file3=/home/stavrosfil/repos/su_pcb/su/su.kicad_pcb

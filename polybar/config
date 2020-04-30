@@ -24,7 +24,7 @@ background-alt = #444
 foreground = #dfdfdf
 foreground-alt = #dfdfdff
 primary = #ffb52a
-secondary = #e60053
+secondary = #4c566a
 alert = #bd2c40
 
 [bar/bottom]
@@ -42,7 +42,7 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 3
-line-color = #f00
+line-color = #8fbcbb
 
 border-size = 0
 border-color = #00000000
@@ -63,7 +63,7 @@ modules-right = filesystem xbacklight alsa pulseaudio wlan eth memory cpu temper
 
 tray-position = right
 tray-padding = 2
-;tray-background = #0063ff
+;tray-background = #88c0d0
 
 ;wm-restack = bspwm
 wm-restack = i3
@@ -191,7 +191,7 @@ interval = 2
 ;format-prefix = " "
 label = CPU %percentage%%
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
+format-underline = #bf616a
 
 ;-----------------------------------------------------------------------------------------
 
@@ -200,7 +200,7 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
+format-underline = #8fbcbb
 label = RAM %gb_free%
 ;format = <label> <bar-free>
 
@@ -223,7 +223,7 @@ interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
 label-connected = %signal%dB / %essid% /%downspeed:9% /%upspeed:9%
-format-connected-underline = #9f78e1
+format-connected-underline = #b48ead
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -245,7 +245,7 @@ type = internal/network
 interface = eno1
 interval = 3.0
 
-format-connected-underline = #55aa55
+format-connected-underline = #5e81ac
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip% /%downspeed:9% /%upspeed:9%
@@ -270,7 +270,7 @@ time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+format-underline = #4c566a
 
 label = %date% %time%
 
@@ -316,7 +316,7 @@ format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}
 label-muted = %percentage%
 
-format-volume-underline = #f5a70a
+format-volume-underline = #8fbcbb
 
 ;-----------------------------------------------------------------------------------------
 
@@ -327,7 +327,7 @@ adapter = ADP1
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
+format-charging-underline = #a3be8c
 
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
@@ -362,7 +362,7 @@ thermal-zone = 6
 warn-temperature = 60
 
 format = <ramp> <label>
-format-underline = #f50a4d
+format-underline = #bf616a
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 

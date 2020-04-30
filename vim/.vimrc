@@ -148,7 +148,7 @@ if exists('+termguicolors')
 	set termguicolors
 endif
 
-colorscheme base16-horizon-dark
+colorscheme base16-nord
 
 "colorscheme 	horizon
 "colorscheme 	halfdark

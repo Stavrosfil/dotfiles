@@ -32,3 +32,5 @@ c.url.searchengines = {'DEFAULT': 'https://www.google.com.ar/search?q={}', 'du':
 # Page(s) to open at the start.
 # Type: List of FuzzyUrl, or FuzzyUrl
 c.url.start_pages = 'https://google.com'
+
+config.source('nord-qutebrowser.py')

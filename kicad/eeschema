@@ -1,10 +1,10 @@
-SchematicFramePos_x=965
-SchematicFramePos_y=37
-SchematicFrameSize_x=945
-SchematicFrameSize_y=1033
+SchematicFramePos_x=10
+SchematicFramePos_y=61
+SchematicFrameSize_x=1900
+SchematicFrameSize_y=1009
 SchematicFrameMaximized=0
 SchematicFrameAutoSaveInterval=600
-SchematicFramePerspective=layout2|name=MainToolbar;caption=;state=139644;dir=1;layer=6;row=0;pos=0;prop=100000;bestw=946;besth=36;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=OptToolbar;caption=;state=139596;dir=4;layer=3;row=0;pos=0;prop=100000;bestw=36;besth=212;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=ToolsToolbar;caption=;state=139596;dir=2;layer=1;row=0;pos=0;prop=100000;bestw=36;besth=688;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=DrawFrame;caption=;state=1020;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=387;besth=181;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=MsgPanel;caption=;state=131452;dir=3;layer=6;row=0;pos=0;prop=100000;bestw=400;besth=34;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|dock_size(1,6,0)=36|dock_size(4,3,0)=36|dock_size(2,1,0)=36|dock_size(5,0,0)=283|dock_size(3,6,0)=34|
+SchematicFramePerspective=layout2|name=MainToolbar;caption=;state=139644;dir=1;layer=6;row=0;pos=0;prop=100000;bestw=1016;besth=36;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=OptToolbar;caption=;state=139596;dir=4;layer=3;row=0;pos=0;prop=100000;bestw=36;besth=212;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=ToolsToolbar;caption=;state=139596;dir=2;layer=1;row=0;pos=0;prop=100000;bestw=36;besth=688;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=DrawFrame;caption=;state=1020;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=387;besth=175;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=MsgPanel;caption=;state=131452;dir=3;layer=6;row=0;pos=0;prop=100000;bestw=400;besth=38;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|dock_size(1,6,0)=36|dock_size(4,3,0)=36|dock_size(2,1,0)=36|dock_size(5,0,0)=389|dock_size(3,6,0)=38|
 SchematicFrameMostRecentlyUsedPath=/home/stavrosfil
 SchematicFrameUnits=1
 SchematicFrameShowGrid=1
@@ -39,12 +39,12 @@ LastFindString=FLG01
 LastReplaceString=
 FieldNames=(templatefields)
 canvas_type=2
-LibeditFramePos_x=965
-LibeditFramePos_y=37
-LibeditFrameSize_x=945
-LibeditFrameSize_y=1033
+LibeditFramePos_x=10
+LibeditFramePos_y=61
+LibeditFrameSize_x=1900
+LibeditFrameSize_y=1009
 LibeditFrameMaximized=0
-LibeditFramePerspective=layout2|name=MainToolbar;caption=;state=139644;dir=1;layer=6;row=0;pos=0;prop=100000;bestw=757;besth=36;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=MsgPanel;caption=;state=131452;dir=3;layer=6;row=0;pos=0;prop=100000;bestw=400;besth=34;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=OptToolbar;caption=;state=139596;dir=4;layer=3;row=0;pos=0;prop=100000;bestw=36;besth=212;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=ComponentTree;caption=Libraries;state=2044;dir=4;layer=1;row=0;pos=0;prop=100000;bestw=539;besth=-1;minw=250;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=ToolsToolbar;caption=;state=139596;dir=2;layer=1;row=0;pos=0;prop=100000;bestw=36;besth=382;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=DrawFrame;caption=;state=768;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=387;besth=181;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|dock_size(1,6,0)=36|dock_size(3,6,0)=34|dock_size(4,3,0)=36|dock_size(4,1,0)=541|dock_size(2,1,0)=36|dock_size(5,0,0)=389|
+LibeditFramePerspective=layout2|name=MainToolbar;caption=;state=139644;dir=1;layer=6;row=0;pos=0;prop=100000;bestw=757;besth=36;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=MsgPanel;caption=;state=131452;dir=3;layer=6;row=0;pos=0;prop=100000;bestw=400;besth=38;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=OptToolbar;caption=;state=139596;dir=4;layer=3;row=0;pos=0;prop=100000;bestw=36;besth=212;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=ComponentTree;caption=Libraries;state=2044;dir=4;layer=1;row=0;pos=0;prop=100000;bestw=539;besth=-1;minw=250;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=ToolsToolbar;caption=;state=139596;dir=2;layer=1;row=0;pos=0;prop=100000;bestw=36;besth=382;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=DrawFrame;caption=;state=768;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=387;besth=175;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|dock_size(1,6,0)=36|dock_size(3,6,0)=38|dock_size(4,3,0)=36|dock_size(4,1,0)=283|dock_size(2,1,0)=36|dock_size(5,0,0)=283|
 LibeditFrameMostRecentlyUsedPath=/home/stavrosfil/Downloads/pcbStuff/parts
 LibeditFrameUnits=1
 LibeditFrameShowGrid=1
@@ -66,7 +66,7 @@ LibeditPinRepeatStep=100
 LibeditRepeatStepX=0
 LibeditRepeatStepY=100
 LibeditShowPinElectricalType=1
-LibeditLibWidth=539
+LibeditLibWidth=281
 Color4DWireEx=rgb(141, 210, 114)
 Color4DBusEx=rgb(68, 135, 170)
 Color4DConnEx=rgb(141, 210, 114)

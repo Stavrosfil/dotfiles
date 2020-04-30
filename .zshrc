@@ -104,13 +104,13 @@ alias cl="clear"
 # alias cubemx="tools/cubemx/STM32CubeMX"
 alias zcon="vi $HOME/.zshrc"
 alias cfi="vi $HOME/.config/i3/config"
-alias ser="ssh stavrosfil@23.97.181.92 -p 1999"
 alias dot="$HOME/repos/dotfiles/"
 alias userpackages="comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)"
 alias sync="bash $HOME/repos/dotfiles/sync.sh"
 alias pip="pip3"
 alias mexec="chmod a+x"
 alias vi="vim"
+alias vim="nvim"
 
 ### file browsing
 # list files
@@ -164,3 +164,21 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] &&
     [ -s "$BASE16_SHELL/profile_helper.sh" ] &&
     eval "$("$BASE16_SHELL/profile_helper.sh")"
+
+PATH="/home/stavrosfil/perl5/bin${PATH:+:${PATH}}"
+export PATH
+PERL5LIB="/home/stavrosfil/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"
+export PERL5LIB
+PERL_LOCAL_LIB_ROOT="/home/stavrosfil/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"
+export PERL_LOCAL_LIB_ROOT
+PERL_MB_OPT="--install_base \"/home/stavrosfil/perl5\""
+export PERL_MB_OPT
+PERL_MM_OPT="INSTALL_BASE=/home/stavrosfil/perl5"
+export PERL_MM_OPT
+
+# -------------------------------- Git Aliases ------------------------------- #
+
+alias gd="git diff --color-words"
+alias gl="git log --oneline --decorate"
+alias glog="git log --oneline --all --graph --decorate -n 30"
+alias gslog="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
