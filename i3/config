@@ -129,7 +129,7 @@ for_window [title="Android Emulator - Pixel_3a_API_29:5554"] floating enable
 
 
 # FORMAT 1
-# set $ws1        "1 Terminals "
+# set $ws1      "1 Terminals "
 # set $ws2	"2 Browser "
 # set $ws3	"3 Code "
 # set $ws4	"4 Android "
@@ -176,6 +176,140 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
+
+# -------------------------------- Wallpaper ------------------------------- #
+
+# Set wallpaper
+set                                     $bg_image $HOME/repos/dotfiles/walls/wall_12.jpg
+exec_always				feh --bg-fill --auto-zoom $bg_image
+# exec_always feh --bg-fill --auto-zoom "$HOME/repos/dotfiles/wall.png"
+
+
+# ------------------------------ Function Keys ----------------------------- #
+
+# Change language shortcuts
+exec_always		                "setxkbmap -layout us,gr"
+exec_always		                "setxkbmap -option 'grp:alt_shift_toggle'"
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec	pactl set-sink-volume @DEFAULT_SINK@ +5%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
+bindsym XF86AudioLowerVolume exec	pactl set-sink-volume @DEFAULT_SINK@ -5%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
+bindsym XF86AudioMute exec		pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+# Sreen brightness controls
+# Do not forget to set X11 config correctly for this to properly work
+bindsym XF86MonBrightnessUp exec	        xbacklight -inc 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec	        xbacklight -dec 5 #screen brightness
+bindsym Shift+XF86MonBrightnessDown exec	xbacklight -set 1 
+
+# Media player controls
+bindsym XF86AudioPause exec		playerctl play-pause
+bindsym XF86AudioNext exec		playerctl next
+bindsym XF86AudioPrev exec		playerctl previous
+
+# Execute compton
+exec_always --no-startup-id		"killall -q picom; picom --config ~/.config/picom/picom.conf"
+
+
+# ---------------------------- Scratchpad window --------------------------- #
+
+# for_window [instance="kitty" title="Life"] resize grow left 300, resize grow right 300, resize grow down 150, resize grow up 100, move scratchpad;
+bindsym $mod+p floating enable, resize shrink left 150, resize shrink right 150, resize shrink down 150, resize shrink up 150
+bindsym $mod+Shift+p floating enable, resize grow left 150, resize grow right 150, resize grow down 150, resize grow up 150
+# bindsym $mod+Shift+Return exec kitty, floating enable, resize shrink left 300, resize shrink right 300, resize shrink down 300, resize shrink up 300
+
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
+
+
+# --------------------------------- Borders -------------------------------- #
+
+# smart_borders on
+for_window [class=".*"] border none
+
+# Configure border style <normal|1pixel|pixel xx|none|pixel>
+# new_window none
+# new_float normal
+# new_float pixel 5
+
+# Hide borders
+# hide_edge_borders none
+
+# change borders
+bindsym $mod+y border none
+bindsym $mod+u border pixel 2
+bindsym $mod+i border normal
+
+# ---------------------------------- Gaps ---------------------------------- #
+
+bindsym $mod+z			gaps inner current plus 5
+bindsym $mod+Shift+z		gaps inner current minus 5
+
+bindsym $mod+x                  gaps inner all set 10
+bindsym $mod+Shift+x            gaps inner all set 0
+
+gaps inner 10
+gaps outer 0
+
+
+# --------------------------------- Colors --------------------------------- #
+
+# Set custom color variables
+set $bg-color			#2f343f
+set $inactive-bg-color		#252932
+set $text-color		        #f3f4f5
+set $inactive-text-color	#676E7D
+set $urgent-bg-color		#f08080
+set $transparent                #00000000
+# set $bg-color			#00000000
+
+# Set the window colors
+#
+# action	                border			background		text			indicator       border
+client.focused	                $bg-color		$bg-color		$text-color		#3a5e5f         #b0c4de
+client.unfocused                $inactive-bg-color	$inactive-bg-color	$inactive-text-color	#2f343f         #7b91ad
+client.focused_inactive         $bg-color	        $bg-color	        $text-color	        #2f343f
+client.urgent                   $urgent-bg-color	$urgent-bg-color	$text-color             #2f343f
+
+
+# -------------------------------- Shortcuts ------------------------------- #
+
+bindsym $mod+b exec firefox
+bindsym $mod+c exec code
+bindsym $mod+o exec pcmanfm
+
+# move focused container to other screen
+bindsym $mod+KP_Right move workspace to output right
+bindsym $mod+KP_Left move workspace to output left
+bindsym $mod+KP_Up move workspace to output up
+bindsym $mod+KP_Down move workspace to output down
+
+# take a screenshot of a screen region and copy it to a clipboard
+# bindsym --release $mod+Shift+o exec "$HOME/.scripts/screen.sh -s $HOME/pictures/screenshots/"
+
+# take a screenshot of a whole window and copy it to a clipboard
+# bindsym --release $mod+o exec "$HOME/.scripts/screen.sh $HOME/pictures/screenshots/"
+
+# Multi-screen screenshots with scrot
+# bindsym --release $mod+o exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # All screens
+
+# OSX-like area selection screenshots
+# bindsym --release $mod+Shift+o exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # Area selection
+bindsym --release $mod+Shift+o exec maim -s | xclip -selection clipboard -t image/png
+
+bindsym $mod+m exec sleep 1 && xset dpms force off
+
+# Screenshot key bindings
+# bindsym Print exec			gnome-screenshot
+# bindsym Control+Print exec		gnome-screenshot -i
+
+# exec_always     			killall notify-osd
+# exec_always     			killall dunst
+# exec_always     			dunst -config ~/.config/i3/config_dunst
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -210,36 +344,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Configure border style <normal|1pixel|pixel xx|none|pixel>
-# new_window none
-# new_float normal
-# new_float pixel 5
-
-# Hide borders
-# hide_edge_borders none
-
-# change borders
-bindsym $mod+y border none
-bindsym $mod+u border pixel 2
-bindsym $mod+i border normal
-
-# Set custom color variables
-set $bg-color			#2f343f
-set $inactive-bg-color		#252932
-set $text-color		        #f3f4f5
-set $inactive-text-color	#676E7D
-set $urgent-bg-color		#f08080
-set $transparent                #00000000
-# set $bg-color			#00000000
-
-# Set the window colors
-#
-# action	                border			background		text			indicator       border
-client.focused	                $bg-color		$bg-color		$text-color		#3a5e5f         #b0c4de
-client.unfocused                $inactive-bg-color	$inactive-bg-color	$inactive-text-color	#2f343f         #7b91ad
-client.focused_inactive         $bg-color	        $bg-color	        $text-color	        #2f343f
-client.urgent                   $urgent-bg-color	$urgent-bg-color	$text-color             #2f343f
-
 # bindsym $mod+Control+l exec --no-startup-id "i3lock; xset dpms force off"
 bindsym $mod+Control+l exec --no-startup-id "/home/stavrosfil/.scripts/lock_and_blur.sh"
 
@@ -248,88 +352,3 @@ bindsym $mod+Control+x exec --no-startup-id "/home/stavrosfil/.scripts/lock_and_
 bindsym $mod+Control+t sticky toggle
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
-bindsym $mod+z			gaps inner current plus 5
-bindsym $mod+Shift+z		gaps inner current minus 5
-
-bindsym $mod+x                  gaps inner all set 10
-bindsym $mod+Shift+x            gaps inner all set 0
-
-for_window [class=".*"] border pixel 2
-gaps inner 10
-gaps outer 0
-
-smart_borders on
-
-# Set wallpaper
-set                                     $bg_image $HOME/repos/dotfiles/walls/wall_12.jpg
-exec_always				feh --bg-fill --auto-zoom $bg_image
-# exec_always feh --bg-fill --auto-zoom "$HOME/repos/dotfiles/wall.png"
-
-# Change language shortcuts
-exec_always		                "setxkbmap -layout us,gr"
-exec_always		                "setxkbmap -option 'grp:alt_shift_toggle'"
-
-# Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec	pactl set-sink-volume @DEFAULT_SINK@ +5%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
-bindsym XF86AudioLowerVolume exec	pactl set-sink-volume @DEFAULT_SINK@ -5%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
-bindsym XF86AudioMute exec		pactl set-sink-mute @DEFAULT_SINK@ toggle
-
-# Sreen brightness controls
-# Do not forget to set X11 config correctly for this to properly work
-bindsym XF86MonBrightnessUp exec	        xbacklight -inc 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec	        xbacklight -dec 5 #screen brightness
-bindsym Shift+XF86MonBrightnessDown exec	xbacklight -set 1 
-
-# Media player controls
-bindsym XF86AudioPause exec		playerctl play-pause
-bindsym XF86AudioNext exec		playerctl next
-bindsym XF86AudioPrev exec		playerctl previous
-
-# Screen shot key bindings
-# bindsym Print exec			gnome-screenshot
-# bindsym Control+Print exec		gnome-screenshot -i
-
-# exec_always     			killall notify-osd
-# exec_always     			killall dunst
-# exec_always     			dunst -config ~/.config/i3/config_dunst
-
-# Execute compton
-# exec_always --no-startup-id		"killall -q picom; picom --config ~/.config/picom/picom.conf"
-
-# Scratchpad window
-# for_window [instance="kitty" title="Life"] resize grow left 300, resize grow right 300, resize grow down 150, resize grow up 100, move scratchpad;
-bindsym $mod+p floating enable, resize shrink left 150, resize shrink right 150, resize shrink down 150, resize shrink up 150
-bindsym $mod+Shift+p floating enable, resize grow left 150, resize grow right 150, resize grow down 150, resize grow up 150
-# bindsym $mod+Shift+Return exec kitty, floating enable, resize shrink left 300, resize shrink right 300, resize shrink down 300, resize shrink up 300
-
-# Make the currently focused window a scratchpad
-bindsym $mod+Shift+minus move scratchpad
-
-# Show the first scratchpad window
-bindsym $mod+minus scratchpad show
-
-bindsym $mod+b exec firefox
-bindsym $mod+c exec code
-bindsym $mod+o exec pcmanfm
-
-# move focused container to other screen
-bindsym $mod+KP_Right move workspace to output right
-bindsym $mod+KP_Left move workspace to output left
-bindsym $mod+KP_Up move workspace to output up
-bindsym $mod+KP_Down move workspace to output down
-
-# take a screenshot of a screen region and copy it to a clipboard
-# bindsym --release $mod+Shift+o exec "$HOME/.scripts/screen.sh -s $HOME/pictures/screenshots/"
-
-# take a screenshot of a whole window and copy it to a clipboard
-# bindsym --release $mod+o exec "$HOME/.scripts/screen.sh $HOME/pictures/screenshots/"
-
-# Multi-screen screenshots with scrot
-# bindsym --release $mod+o exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # All screens
-
-# OSX-like area selection screenshots
-# bindsym --release $mod+Shift+o exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # Area selection
-bindsym --release $mod+Shift+o exec maim -s | xclip -selection clipboard -t image/png
-
-bindsym $mod+m exec sleep 1 && xset dpms force off
