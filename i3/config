@@ -31,7 +31,6 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec kitty
-bindsym $mod+Shift+Return exec kitty --working-directory=$(cat /tmp/whereami)
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -126,6 +125,7 @@ for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
 for_window [title="Android Emulator - Pixel_3a_API_29:5554"] floating enable
+for_window [class="Pick#adadad"] floating enable
 
 
 # FORMAT 1
@@ -277,7 +277,7 @@ client.urgent                   $urgent-bg-color	$urgent-bg-color	$text-color   
 
 # -------------------------------- Shortcuts ------------------------------- #
 
-bindsym $mod+b exec firefox
+bindsym $mod+b exec qutebrowser
 bindsym $mod+c exec code
 bindsym $mod+o exec pcmanfm
 
@@ -352,3 +352,5 @@ bindsym $mod+Control+x exec --no-startup-id "/home/stavrosfil/.scripts/lock_and_
 bindsym $mod+Control+t sticky toggle
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+bindsym $mod+Shift+Return exec kitty --working-directory=$(cat /tmp/whereami)
