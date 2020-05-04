@@ -23,11 +23,11 @@ background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #dfdfdff
-primary = #ffb52a
-secondary = #4c566a
+primary = #4c566a
+secondary = #ffb52a
 alert = #bd2c40
 
-[bar/bottom]
+[bar/top]
 ;monitor = ${env:MONITOR:eDP1}
 monitor = ${env:MONITOR:}
 width = 100%
@@ -53,16 +53,20 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
+;font-0 = fixed:pixelsize=10;1
+;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+;font-2 = siji:pixelsize=10;1
+
+font-0 = terminus:pixelsize=10;1
+font-1 = unifont:fontformat=truetype:size=10:antialias=false;0
+font-2 = "Wuncon Siji:pixelsize=12;1"
 
 modules-left = i3
-;modules-center = mpd
+modules-center = xwindow mpd
 modules-right = filesystem xbacklight alsa pulseaudio wlan eth memory cpu temperature battery xkeyboard date powermenu
 
 tray-position = right
-tray-padding = 2
+tray-padding = 0
 ;tray-background = #88c0d0
 
 ;wm-restack = bspwm
@@ -82,6 +86,7 @@ cursor-scroll = ns-resize
 ;-----------------------------------------------------------------------------------------
 
 [module/xwindow]
+format = <label>
 type = internal/xwindow
 label = %title:0:30:...%
 
@@ -91,12 +96,12 @@ label = %title:0:30:...%
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-prefix = " "
+;format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.secondary}
+format-prefix-underline = ${colors.primary}
 
 label-layout = %layout%
-label-layout-underline = ${colors.secondary}
+label-layout-underline = ${colors.primary}
 
 label-indicator-padding = 2
 label-indicator-margin = 1
@@ -109,19 +114,27 @@ label-indicator-underline = ${colors.secondary}
 type = internal/fs
 interval = 25
 
-mount-0 = /
-mount-1 = /home
+mount-0 = /home
+mount-1 = /
 
 spacing = 4
 
 label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %free%
-label-unmounted = %mountpoint% not mounted
+;label-unmounted = %mountpoint% not mounted
+label-unmounted =
 label-unmounted-foreground = ${colors.foreground-alt}
 
 ;-----------------------------------------------------------------------------------------
 
 [module/i3]
 type = internal/i3
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;♛
+ws-icon-2 = 3;♜
+ws-icon-3 = 4;♝
+ws-icon-4 = 5;♞
+
 format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
@@ -163,6 +176,9 @@ label-urgent-padding = 2
 type = internal/mpd
 format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
 
+host = 127.0.0.1
+port = 6600
+
 icon-prev = 
 icon-stop = 
 icon-play = 
@@ -189,7 +205,7 @@ format-underline = #add8e6
 type = internal/cpu
 interval = 2
 ;format-prefix = " "
-label = CPU %percentage%%
+label = %percentage%%
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #bf616a
 
@@ -198,10 +214,10 @@ format-underline = #bf616a
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+;format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #8fbcbb
-label = RAM %gb_free%
+label = %gb_free%
 ;format = <label> <bar-free>
 
 ;-----------------------------------------------------------------------------------------
@@ -246,9 +262,9 @@ interface = eno1
 interval = 3.0
 
 format-connected-underline = #5e81ac
-format-connected-prefix = " "
+;format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip% /%downspeed:9% /%upspeed:9%
+label-connected = %downspeed:9% %upspeed:9%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -268,8 +284,8 @@ date-alt = " %Y-%m-%d"
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
+;format-prefix = 
+;format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4c566a
 
 label = %date% %time%
@@ -358,7 +374,7 @@ animation-discharging-framerate = 750
 
 [module/temperature]
 type = internal/temperature
-thermal-zone = 6
+thermal-zone = 2
 warn-temperature = 60
 
 format = <ramp> <label>

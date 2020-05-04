@@ -232,3 +232,10 @@ nmap <silent> <leader><leader> :noh<CR>
 nmap <Tab> :bnext<CR>
 nmap <S-Tab> :bprevious<CR>
 
+
+
+""" Extra functionality
+
+" Leave some space when scrolling
+set so=7
+set clipboard+=unnamedplus

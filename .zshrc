@@ -1,10 +1,11 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Path to your oh-my-zsh installation.
 # export ZSH="$HOME/.oh-my-zsh"
 
 source $HOME/antigen.zsh
+
+export TERMINAL="kitty"
 
 # Export sync script thingy
 export already_setup=true
@@ -17,7 +18,10 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle git
 antigen bundle command-not-found
 antigen bundle ael-code/zsh-colored-man-pages
-antigen bundle "MichaelAquilina/zsh-you-should-use"
+antigen bundle httpie
+antigen bundle docker
+antigen bundle git-extras
+antigen bundle zsh-users/zsh-completions
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -50,30 +54,30 @@ COMPLETION_WAITING_DOTS="true"
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+# -------------------------------- Git Aliases ------------------------------- #
 
-# Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-# source $ZSH/oh-my-zsh.sh
+alias gd="git diff --color-words"
+alias gl="git log --oneline --decorate"
+alias glog="git log --oneline --all --graph --decorate -n 30"
+alias gslog="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 
-# GEOMETRY_PROMPT=(geometry_status geometry_path geometry_git) # redefine left prompt
-# GEOMETRY_RPROMPT=(geometry_exec_time pwd)                    # append exec_time and pwd right prompt
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Custom cd functinallity
-custom_cd() {
-    cd $1
-    ls
+#custom_cd() {
+#    cd $1
+#    ls --color=auto
+#}
+#alias cd="custom_cd"
+
+chpwd() {
+    ls --color=auto
 }
-alias cd="custom_cd"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -175,12 +179,3 @@ PERL_MB_OPT="--install_base \"/home/stavrosfil/perl5\""
 export PERL_MB_OPT
 PERL_MM_OPT="INSTALL_BASE=/home/stavrosfil/perl5"
 export PERL_MM_OPT
-
-# -------------------------------- Git Aliases ------------------------------- #
-
-alias gd="git diff --color-words"
-alias gl="git log --oneline --decorate"
-alias glog="git log --oneline --all --graph --decorate -n 30"
-alias gslog="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
