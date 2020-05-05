@@ -74,11 +74,6 @@ chpwd() {
     ls --color=auto
 }
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-export LANG=en_US.UTF-8
-
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
@@ -179,3 +174,16 @@ PERL_MB_OPT="--install_base \"/home/stavrosfil/perl5\""
 export PERL_MB_OPT
 PERL_MM_OPT="INSTALL_BASE=/home/stavrosfil/perl5"
 export PERL_MM_OPT
+
+# Automatically start a tmux session when connecting with SSH
+if [[ -z "$TMUX" ]] && [ "$SSH_CONNECTION" != "" ]; then
+    tmux -u attach-session -t ssh_tmux || tmux -u new-session -s ssh_tmux
+fi
+
+alias tmux="tmux -u"
+
+# Fix repeating characters on tab completion
+export LC_ALL="en_US.UTF-8"
+
+# You may need to manually set your language environment
+export LANG=en_US.UTF-8

@@ -44,13 +44,16 @@ ln -sfnv $DOTS/polybar $HOME/.config
 
 # ----------------------------------- Nvim ----------------------------------- #
 
-ln -sfnv $DOTS/nvim $HOME/.config
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Enter Neovim and install plugins using a temporary init.vim
 # which avoids warnings about missing colorschemes, functions, etc
 sed '/call plug#end/q' init.vim >~/.config/nvim/init.vim
 nvim -c ':PlugInstall' -c ':UpdateRemotePlugins' -c ':qall'
 rm ~/.config/nvim/init.vim
+
+ln -sfnv $DOTS/nvim $HOME/.config
 
 # -------------------------------- X11 Config -------------------------------- #
 
