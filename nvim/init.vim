@@ -28,7 +28,7 @@ Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-jedi'
+"Plug 'zchee/deoplete-jedi'
 Plug 'ervandew/supertab'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-easy-align'
@@ -45,6 +45,14 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'metakirby5/codi.vim'
 Plug 'dkarter/bullets.vim'
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ryanoasis/vim-devicons'
+Plug 'airblade/vim-gitgutter'
+
 
 " Entertainment
 "Plug 'ryanss/vim-hackernews'
@@ -239,3 +247,6 @@ nmap <S-Tab> :bprevious<CR>
 " Leave some space when scrolling
 set so=7
 set clipboard+=unnamedplus
+
+map <xCSI>[62~ <MouseDown>
+set mouse=a
