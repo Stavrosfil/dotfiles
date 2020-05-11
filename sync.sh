@@ -35,6 +35,7 @@ ln -sfnv $DOTS/vim/.vim $HOME/.config
 ln -sfnv $DOTS/vim/.vimrc $HOME
 ln -sfnv $DOTS/zathura $HOME/.config
 ln -sfnv $DOTS/.zshrc $HOME
+ln -sfnv $DOTS/.profile $HOME
 ln -sfnv $DOTS/.clang-format $HOME
 ln -sfnv $DOTS/qutebrowser $HOME/.config
 ln -sfnv $DOTS/kicad $HOME/.config

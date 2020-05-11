@@ -1,10 +1,11 @@
 BasedOnStyle: LLVM
 AlignAfterOpenBracket: Align
+AlignConsecutiveMacros: 'true'
 AlignConsecutiveAssignments: 'true'
 AlignEscapedNewlines: Right
 AlignOperands: 'true'
 AlignTrailingComments: 'true'
-BreakBeforeBraces: Stroustrup
+BreakBeforeBraces: Attach
 ColumnLimit: '120'
 IndentWidth: '4'
 PointerAlignment: Right

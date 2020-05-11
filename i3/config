@@ -282,24 +282,18 @@ bindsym $mod+KP_Left move workspace to output left
 bindsym $mod+KP_Up move workspace to output up
 bindsym $mod+KP_Down move workspace to output down
 
-# take a screenshot of a screen region and copy it to a clipboard
-# bindsym --release $mod+Shift+o exec "$HOME/.scripts/screen.sh -s $HOME/pictures/screenshots/"
+# Screenshots
+bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
+bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date)"
+bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"
 
-# take a screenshot of a whole window and copy it to a clipboard
-# bindsym --release $mod+o exec "$HOME/.scripts/screen.sh $HOME/pictures/screenshots/"
+## Clipboard Screenshots
+bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
-# Multi-screen screenshots with scrot
-# bindsym --release $mod+o exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # All screens
-
-# OSX-like area selection screenshots
-# bindsym --release $mod+Shift+o exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # Area selection
-bindsym --release $mod+Shift+o exec maim -s | xclip -selection clipboard -t image/png
 
 bindsym $mod+m exec sleep 1 && xset dpms force off
-
-# Screenshot key bindings
-# bindsym Print exec			gnome-screenshot
-# bindsym Control+Print exec		gnome-screenshot -i
 
 # exec_always     			killall notify-osd
 # exec_always     			killall dunst
@@ -314,12 +308,6 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-    # These bindings trigger as soon as you enter the resize mode
-
-    # Pressing left will shrink the window’s width.
-    # Pressing right will grow the window’s width.
-    # Pressing up will shrink the window’s height.
-    # Pressing down will grow the window’s height.
     bindsym j resize shrink width 10 px or 10 ppt
     bindsym k resize grow height 10 px or 10 ppt
     bindsym l resize shrink height 10 px or 10 ppt
@@ -350,7 +338,7 @@ bindsym $mod+Ctrl+m exec $TERMINAL -e 'alsamixer'
 # ------------------------ Startup Applications ---------------------------- #
 
 exec --no-startup-id nm-applet
-# exec --no-startup-id xfce4-power-manager
-# exec --no-startup-id pamac-tray
+exec --no-startup-id xfce4-power-manager
+exec --no-startup-id pamac-tray
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
