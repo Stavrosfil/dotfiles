@@ -40,6 +40,6 @@ adobe-source-code-pro-fonts
 
 # Screens
 
-![screen1](.github/screen1.png)
-![screen2](.github/screen2.png)
-![screen3](.github/screen3.png)
+![screen1](.github/1.png)
+![screen2](.github/2.png)
+![screen3](.github/3.png)
