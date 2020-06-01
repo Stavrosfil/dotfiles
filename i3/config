@@ -10,7 +10,6 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-# set $TERMINAL kitty
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -24,8 +23,9 @@ font pango:DejaVu Sans Mono 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return         exec $TERMINAL
-bindsym $mod+Shift+Return   exec samedir
+bindsym $mod+Return         exec i3-sensible-terminal
+# bindsym $mod+Shift+Return   exec samedir
+bindsym $mod+Shift+Return exec sameshell
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -124,7 +124,7 @@ for_window [class="Pick#adadad"] floating enable
 
 
 # FORMAT 1
-# set $ws1      "1 Terminals "
+# set $ws1  "1 Terminals "
 # set $ws2	"2 Browser "
 # set $ws3	"3 Code "
 # set $ws4	"4 Android "
@@ -133,18 +133,18 @@ for_window [class="Pick#adadad"] floating enable
 # set $ws7	"7 Files "
 # set $ws8	"8 Comms "
 # set $ws9	"9 Chatting "
-# set $ws10 	"10 Media "
+# set $ws10 "10 Media "
 
 # FORMAT 2
 set $ws1    "1:  "
 set $ws2	"2:  "
 set $ws3	"3:  "
-set $ws4	"4:  "
+set $ws4	"4:  "
 set $ws5	"5:  "
 set $ws6	"6:  "
 set $ws7	"7:  "
-set $ws8	"8:  "
-set $ws9	"9:  "
+set $ws8	"8:  "
+set $ws9	"9:  "
 set $ws10 	"10:  "
 
 # switch to workspace
@@ -175,21 +175,21 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 # -------------------------------- Wallpaper ------------------------------- #
 
 # Set wallpaper
-set                                     $bg_image $HOME/repos/dotfiles/walls/wall_12.jpg
-exec_always				feh --bg-fill --auto-zoom $bg_image
-# exec_always feh --bg-fill --auto-zoom "$HOME/repos/dotfiles/wall.png"
+# set                     $bg_image $HOME/repos/dotfiles/walls/wall_12.jpg
+# exec_always				feh --bg-fill --auto-zoom $bg_image
+exec_always --no-startup-id $HOME/.fehbg
 
 
 # ------------------------------ Function Keys ----------------------------- #
 
 # Change language shortcuts
-exec_always		                "setxkbmap -layout us,gr"
+exec_always 	                "setxkbmap -layout us,gr"
 exec_always		                "setxkbmap -option 'grp:alt_shift_toggle'"
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec	pactl set-sink-volume @DEFAULT_SINK@ +5%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
 bindsym XF86AudioLowerVolume exec	pactl set-sink-volume @DEFAULT_SINK@ -5%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
-bindsym XF86AudioMute exec		pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMute exec		    pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # Sreen brightness controls
 # Do not forget to set X11 config correctly for this to properly work
@@ -240,11 +240,11 @@ bindsym $mod+i border normal
 
 # ---------------------------------- Gaps ---------------------------------- #
 
-bindsym $mod+z			gaps inner current plus 5
+bindsym $mod+z			    gaps inner current plus 5
 bindsym $mod+Shift+z		gaps inner current minus 5
 
-bindsym $mod+x                  gaps inner all set 10
-bindsym $mod+Shift+x            gaps inner all set 0
+bindsym $mod+x              gaps inner all set 10
+bindsym $mod+Shift+x        gaps inner all set 0
 
 gaps inner 10
 gaps outer 0
@@ -253,27 +253,28 @@ gaps outer 0
 # --------------------------------- Colors --------------------------------- #
 
 # Set custom color variables
-set $bg-color			#2f343f
-set $inactive-bg-color		#252932
-set $text-color		        #f3f4f5
-set $inactive-text-color	#676E7D
-set $urgent-bg-color		#f08080
-set $transparent                #00000000
-# set $bg-color			#00000000
+set_from_resource $bg-color             color10     #2f343f   
+set_from_resource $inactive-bg-color    color0      #252932
+set_from_resource $text-color           foreground  #f3f4f5
+set_from_resource $inactive-text-color  color11     #676E7D
+set_from_resource $urgent-bg-color		color1      #f08080
+set_from_resource $indicator            color6      #3a5e5f
+set_from_resource $border_focused       color8      
+set_from_resource $border_unfocused     color11      
+set_from_resource $transparent          #00000000
 
 # Set the window colors
-#
-# action	                border			background		text			indicator       border
-client.focused	                $bg-color		$bg-color		$text-color		#3a5e5f         #b0c4de
-client.unfocused                $inactive-bg-color	$inactive-bg-color	$inactive-text-color	#2f343f         #7b91ad
-client.focused_inactive         $bg-color	        $bg-color	        $text-color	        #2f343f
-client.urgent                   $urgent-bg-color	$urgent-bg-color	$text-color             #2f343f
+# action	                    border			    background		    text			        indicator       border
+client.focused	                $bg-color		    $bg-color		    $text-color		        $indicator      $border_focused
+client.unfocused                $inactive-bg-color	$inactive-bg-color	$inactive-text-color	$bg-color       $border_unfocused
+client.focused_inactive         $bg-color	        $bg-color	        $text-color	            $bg-color
+client.urgent                   $urgent-bg-color	$urgent-bg-color	$text-color             $bg-color
 
 
 # -------------------------------- Shortcuts ------------------------------- #
 
 bindsym $mod+b exec $BROWSER
-bindsym $mod+c exec $CODEEDITOR
+bindsym $mod+c exec $EDITOR
 bindsym $mod+o exec $FILES
 
 # move focused container to other screen
@@ -329,7 +330,6 @@ bindsym $mod+r mode "resize"
 
 # bindsym $mod+Control+l exec --no-startup-id "i3lock; xset dpms force off"
 bindsym $mod+Control+l exec --no-startup-id "/home/stavrosfil/.scripts/lock_and_blur.sh"
-
 bindsym $mod+Control+x exec --no-startup-id "/home/stavrosfil/.scripts/lock_and_blur.sh; systemctl suspend"
 
 bindsym $mod+Ctrl+m exec $TERMINAL -e 'alsamixer'

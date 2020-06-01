@@ -128,19 +128,15 @@ label-urgent-padding = 3
 
 [module/mpd]
 type = internal/mpd
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
 
+; Host where mpd is running (either ip or domain name)
+; Can also be the full path to a unix socket where mpd is running.
 host = 127.0.0.1
 port = 6600
 
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
-
-label-song-maxlen = 25
-label-song-ellipsis = true
+; Seconds to sleep between progressbar/song timer sync
+; Default: 1
+interval = 2
 
 ;----------------------------------------------------------------------------------------- xwindow
 

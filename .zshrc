@@ -132,6 +132,10 @@ alias cp="cp -rfv"
 alias mv="mv -fv"
 alias mvi="mv -fvi"
 
+alias tmux="tmux -u"
+
+alias bgset="feh --bg-fill --auto-zoom"
+
 # History directory navigation
 d='dirs -v | head -10'
 1='cd -'
@@ -180,10 +184,11 @@ if [[ -z "$TMUX" ]] && [ "$SSH_CONNECTION" != "" ]; then
     tmux -u attach-session -t ssh_tmux || tmux -u new-session -s ssh_tmux
 fi
 
-alias tmux="tmux -u"
-
 # Fix repeating characters on tab completion
 export LC_ALL="en_US.UTF-8"
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
+
+# Used to spawn a terminal in the same working directory
+export PROMPT_COMMAND="pwd > /tmp/whereami"
