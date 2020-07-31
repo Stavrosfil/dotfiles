@@ -49,7 +49,8 @@ radius = 0
 fixed-center = true
 
 background = ${colors.background}
-foreground = ${colors.foreground}
+# foreground = ${colors.foreground}
+foreground = #ffffff
 
 line-size = 3
 
@@ -183,6 +184,31 @@ interval = 5
 click-right = pavucontrol &
 
 format-volume-underline = #8fbcbb
+
+
+# ;----------------------------------------------------------------------------------------- alsa
+
+# [module/alsa]
+# type = internal/alsa
+
+# ; Soundcard to be used
+# ; Usually in the format hw:# where # is the card number
+# ; You can find the different card numbers in `/proc/asound/cards`
+# master-soundcard = default
+# speaker-soundcard = default
+# headphone-soundcard = default
+
+# ; Name of the master, speaker and headphone mixers
+# ; Use the following command to list available mixer controls:
+# ; $ amixer scontrols | sed -nr "s/.*'([[:alnum:]]+)'.*/\1/p"
+# ; If master, speaker or headphone-soundcard isn't the default, 
+# ; use `amixer -c # scontrols` instead where # is the number 
+# ; of the master, speaker or headphone soundcard respectively
+# ;
+# ; Default: Master
+# master-mixer = Master
+
+# format-volume-underline = #8fbcbb
 
 ;----------------------------------------------------------------------------------------- eth
 
