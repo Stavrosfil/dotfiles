@@ -22,19 +22,6 @@ font pango:DejaVu Sans Mono 8
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return         exec i3-sensible-terminal
-# bindsym $mod+Shift+Return   exec samedir
-bindsym $mod+Shift+Return exec sameshell
-
-# kill focused window
-bindsym $mod+Shift+q kill
-
-# start dmenu (a program launcher)
-##bindsym $mod+d exec dmenu_run
-
-bindsym $mod+d exec rofi -show run
-
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -119,8 +106,15 @@ for_window [class="Skype"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
+
+for_window [class="Viewnior"] floating enable
 for_window [title="Android Emulator - Pixel_3a_API_29:5554"] floating enable
 for_window [class="Pick#adadad"] floating enable
+for_window [class="^floatingTerm$"] floating enable border normal
+for_window [class="messenger-nativefier"] floating enable
+for_window [class="matplotlib"] floating enable
+for_window [class="Xarchiver"] floating enable
+for_window [class="Pcmanfm"] floating enable
 
 
 # FORMAT 1
@@ -187,9 +181,14 @@ exec_always 	                "setxkbmap -layout us,gr"
 exec_always		                "setxkbmap -option 'grp:alt_shift_toggle'"
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec	pactl set-sink-volume @DEFAULT_SINK@ +5%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
-bindsym XF86AudioLowerVolume exec	pactl set-sink-volume @DEFAULT_SINK@ -5%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
-bindsym XF86AudioMute exec		    pactl set-sink-mute @DEFAULT_SINK@ toggle
+#bindsym XF86AudioRaiseVolume exec	pactl set-sink-volume @DEFAULT_SINK@ +5%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
+#bindsym XF86AudioLowerVolume exec	pactl set-sink-volume @DEFAULT_SINK@ -5%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
+#bindsym XF86AudioMute exec		pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+bindsym XF86AudioRaiseVolume exec   "amixer -q sset Master,0 4+ unmute"
+bindsym XF86AudioLowerVolume exec   "amixer -q sset Master,0 4- unmute"
+bindsym XF86AudioMute exec          "amixer -q sset Master,0 toggle"
+
 
 # Sreen brightness controls
 # Do not forget to set X11 config correctly for this to properly work
@@ -271,11 +270,22 @@ client.focused_inactive         $bg-color	        $bg-color	        $text-color	
 client.urgent                   $urgent-bg-color	$urgent-bg-color	$text-color             $bg-color
 
 
-# -------------------------------- Shortcuts ------------------------------- #
+# ---------------------------------- Binds --------------------------------- #
+
+# start a terminal
+bindsym $mod+Return                 exec $TERMINAL
+bindsym $mod+Shift+Return           exec $TERMINAL --class floatingTerm
+
+# bindsym $mod+Shift+Return   exec samedir
+# bindsym $mod+Shift+Return exec sameshell
+
+bindsym $mod+Shift+q kill
+bindsym $mod+d exec rofi -show run
 
 bindsym $mod+b exec $BROWSER
 bindsym $mod+c exec $EDITOR
 bindsym $mod+o exec $FILES
+bindsym $mod+n exec messenger-nativefier
 
 # move focused container to other screen
 bindsym $mod+KP_Right move workspace to output right
@@ -329,8 +339,14 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # bindsym $mod+Control+l exec --no-startup-id "i3lock; xset dpms force off"
-bindsym $mod+Control+l exec --no-startup-id "/home/stavrosfil/.scripts/lock_and_blur.sh"
-bindsym $mod+Control+x exec --no-startup-id "/home/stavrosfil/.scripts/lock_and_blur.sh; systemctl suspend"
+#bindsym $mod+Control+l exec --no-startup-id "/home/stavrosfil/.scripts/lock_and_blur.sh"
+#bindsym $mod+Control+x exec --no-startup-id "/home/stavrosfil/.scripts/lock_and_blur.sh; systemctl suspend"
+
+# Lock screen
+bindsym $mod+Control+l exec --no-startup-id "blurlock"
+bindsym $mod+Control+x exec --no-startup-id "blurlock; systemctl syspend"
+exec --no-startup-id xautolock -time 10 -locker blurlock
+
 
 bindsym $mod+Ctrl+m exec $TERMINAL -e 'alsamixer'
 
