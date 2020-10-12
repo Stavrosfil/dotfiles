@@ -84,14 +84,19 @@ chpwd() {
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-export PATH="$HOME/tools/cubemx/STM32CubeMX/:$PATH"
-export PATH="$HOME/tools/android-studio/bin:$PATH"
-export PATH="$HOME/tools/flutter/bin:$PATH"
+
+export ANDROID_HOME=/opt/android-sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+#export PATH="$HOME/tools/cubemx/STM32CubeMX/:$PATH"
+#export PATH="$HOME/tools/android-studio/bin:$PATH"
+#export PATH="$HOME/tools/flutter/bin:$PATH"
 export PATH="$HOME/.scripts:$PATH"
-export PATH="$HOME/tools/flutter/bin:$PATH"
 export PATH="${PATH}:${HOME}/.local/bin/"
 # export JAVA_HOME="/usr/lib/jvm/java-8-openjdk/"
-export ANDROID_HOME="$HOME/Android/Sdk"
+export JAVA_HOME="/usr/lib/jvm/java-14-openjdk/"
+#export ANDROID_HOME="$HOME/Android/Sdk"
 # export IDF_PATH="$HOME/esp/esp-idf"
 export IDF_PATH="$HOME/esp/ESP8266_RTOS_SDK"
 export TERM=xterm-256color

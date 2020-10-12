@@ -70,7 +70,7 @@ font-3 = Fontawesome
 
 modules-left = i3
 modules-center = xwindow mpd
-modules-right = filesystem xbacklight alsa pulseaudio wlan eth memory cpu temperature battery xkeyboard date powermenu
+modules-right = filesystem xbacklight wlan eth alsa pulseaudio memory cpu temperature battery xkeyboard date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -159,14 +159,17 @@ spacing = 4
 
 label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %free%
 ;label-unmounted = %mountpoint% not mounted
-label-unmounted =
+; label-unmounted =
 label-unmounted-foreground = ${colors.foreground}
 
 fixed-values = true
+format-mounted-underline = ${colors.primary}
+
 
 ;----------------------------------------------------------------------------------------- pulseaudio
 
 [module/pulseaudio]
+
 type = internal/pulseaudio
 
 ; Sink to be used, if it exists (find using `pacmd list-sinks`, name field)
@@ -180,35 +183,33 @@ use-ui-max = true
 ; Interval for volume increase/decrease (in percent points)
 ; Default: 5
 interval = 5
-
 click-right = pavucontrol &
-
 format-volume-underline = #8fbcbb
 
 
 # ;----------------------------------------------------------------------------------------- alsa
 
-# [module/alsa]
-# type = internal/alsa
+; [module/alsa]
+; type = internal/alsa
 
-# ; Soundcard to be used
-# ; Usually in the format hw:# where # is the card number
-# ; You can find the different card numbers in `/proc/asound/cards`
-# master-soundcard = default
-# speaker-soundcard = default
-# headphone-soundcard = default
+; ; Soundcard to be used
+; ; Usually in the format hw:# where # is the card number
+; ; You can find the different card numbers in `/proc/asound/cards`
+; master-soundcard = default
+; speaker-soundcard = default
+; headphone-soundcard = default
 
-# ; Name of the master, speaker and headphone mixers
-# ; Use the following command to list available mixer controls:
-# ; $ amixer scontrols | sed -nr "s/.*'([[:alnum:]]+)'.*/\1/p"
-# ; If master, speaker or headphone-soundcard isn't the default, 
-# ; use `amixer -c # scontrols` instead where # is the number 
-# ; of the master, speaker or headphone soundcard respectively
-# ;
-# ; Default: Master
-# master-mixer = Master
+; ; Name of the master, speaker and headphone mixers
+; ; Use the following command to list available mixer controls:
+; ; $ amixer scontrols | sed -nr "s/.*'([[:alnum:]]+)'.*/\1/p"
+; ; If master, speaker or headphone-soundcard isn't the default, 
+; ; use `amixer -c # scontrols` instead where # is the number 
+; ; of the master, speaker or headphone soundcard respectively
+; ;
+; ; Default: Master
+; master-mixer = Master
 
-# format-volume-underline = #8fbcbb
+; format-volume-underline = #8fbcbb
 
 ;----------------------------------------------------------------------------------------- eth
 

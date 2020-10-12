@@ -5,7 +5,7 @@ export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 # Adds `~/.local/bin/` and all subdirectories to $PATH
 BIN_PATH="$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 
-mons --primary HDMI-0
+mons --primary DP-0
 mons -e right
 
 export BROWSER="qutebrowser"

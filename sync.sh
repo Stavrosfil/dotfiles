@@ -29,7 +29,7 @@ ln -sfnv $DOTS/.scripts $HOME
 ln -sfnv $DOTS/picom $HOME/.config
 ln -sfnv $DOTS/i3 $HOME/.config
 ln -sfnv $DOTS/kitty $HOME/.config
-ln -sfnv $DOTS/ranger/* $HOME/.config
+ln -sfnv $DOTS/ranger $HOME/.config
 ln -sfnv $DOTS/rofi $HOME/.config
 ln -sfnv $DOTS/vim/.vim $HOME/.config
 ln -sfnv $DOTS/vim/.vimrc $HOME

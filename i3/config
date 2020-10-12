@@ -115,6 +115,7 @@ for_window [class="messenger-nativefier"] floating enable
 for_window [class="matplotlib"] floating enable
 for_window [class="Xarchiver"] floating enable
 for_window [class="Pcmanfm"] floating enable
+for_window [class="Zathura"] floating enable
 
 
 # FORMAT 1
@@ -264,9 +265,9 @@ set_from_resource $transparent          #00000000
 
 # Set the window colors
 # action	                    border			    background		    text			        indicator       border
-client.focused	                $bg-color		    $bg-color		    $text-color		        $indicator      $border_focused
+client.focused	                $inactive-bg-color  $inactive-bg-color	$text-color		        $indicator      $border_focused
 client.unfocused                $inactive-bg-color	$inactive-bg-color	$inactive-text-color	$bg-color       $border_unfocused
-client.focused_inactive         $bg-color	        $bg-color	        $text-color	            $bg-color
+client.focused_inactive         $inactive-bg-color  $inactive-bg-color	$text-color	            $bg-color
 client.urgent                   $urgent-bg-color	$urgent-bg-color	$text-color             $bg-color
 
 

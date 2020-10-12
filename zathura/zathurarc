@@ -1,6 +1,6 @@
 map <C-i> recolor
 
-set recolor true
+set recolor false
 #dddcc9
 #999886
 #DEFAULT: dcdccc
