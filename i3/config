@@ -202,10 +202,6 @@ bindsym XF86AudioPause exec		playerctl play-pause
 bindsym XF86AudioNext exec		playerctl next
 bindsym XF86AudioPrev exec		playerctl previous
 
-# Execute compton
-exec_always --no-startup-id		"killall -q picom; picom --config ~/.config/picom/picom.conf"
-
-
 # ---------------------------- Scratchpad window --------------------------- #
 
 # for_window [instance="kitty" title="Life"] resize grow left 300, resize grow right 300, resize grow down 150, resize grow up 100, move scratchpad;
@@ -246,7 +242,7 @@ bindsym $mod+Shift+z		gaps inner current minus 5
 bindsym $mod+x              gaps inner all set 10
 bindsym $mod+Shift+x        gaps inner all set 0
 
-gaps inner 10
+gaps inner 0
 gaps outer 0
 
 
@@ -307,10 +303,6 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection c
 
 bindsym $mod+m exec sleep 1 && xset dpms force off
 
-# exec_always     			killall notify-osd
-# exec_always     			killall dunst
-# exec_always     			dunst -config ~/.config/i3/config_dunst
-
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -359,3 +351,11 @@ exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# Execute picom
+# exec_always --no-startup-id     killall picom
+# exec_always --no-startup-id		"killall -q picom; picom --config ~/.config/picom/picom.conf"
+
+# exec_always --no-startup-id     killall notify-osd
+exec_always --no-startup-id     killall dunst
+exec_always --no-startup-id     dunst -config ~/.config/i3/config_dunst
