@@ -28,10 +28,10 @@ floating_modifier $mod
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+# bindsym $mod+j focus left
+# bindsym $mod+k focus down
+# bindsym $mod+l focus up
+# bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -40,10 +40,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left 50px
-bindsym $mod+Shift+k move down 50px
-bindsym $mod+Shift+l move up 50px
-bindsym $mod+Shift+semicolon move right 50px
+# bindsym $mod+Shift+j move left 50px
+# bindsym $mod+Shift+k move down 50px
+# bindsym $mod+Shift+l move up 50px
+# bindsym $mod+Shift+semicolon move right 50px
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left 50px
@@ -116,6 +116,7 @@ for_window [class="matplotlib"] floating enable
 for_window [class="Xarchiver"] floating enable
 for_window [class="Pcmanfm"] floating enable
 for_window [class="Zathura"] floating enable
+for_window [class="Matplotlib"] floating enable
 
 
 # FORMAT 1
@@ -182,13 +183,13 @@ exec_always 	                "setxkbmap -layout us,gr"
 exec_always		                "setxkbmap -option 'grp:alt_shift_toggle'"
 
 # Pulse Audio controls
-#bindsym XF86AudioRaiseVolume exec	pactl set-sink-volume @DEFAULT_SINK@ +5%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
-#bindsym XF86AudioLowerVolume exec	pactl set-sink-volume @DEFAULT_SINK@ -5%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
-#bindsym XF86AudioMute exec		pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec	pactl set-sink-volume @DEFAULT_SINK@ +5%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
+bindsym XF86AudioLowerVolume exec	pactl set-sink-volume @DEFAULT_SINK@ -5%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
+bindsym XF86AudioMute exec		pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-bindsym XF86AudioRaiseVolume exec   "amixer -q sset Master,0 4+ unmute"
-bindsym XF86AudioLowerVolume exec   "amixer -q sset Master,0 4- unmute"
-bindsym XF86AudioMute exec          "amixer -q sset Master,0 toggle"
+# bindsym XF86AudioRaiseVolume exec   "amixer -q sset Master,0 4+ unmute"
+# bindsym XF86AudioLowerVolume exec   "amixer -q sset Master,0 4- unmute"
+# bindsym XF86AudioMute exec          "amixer -q sset Master,0 toggle"
 
 
 # Sreen brightness controls
@@ -239,8 +240,8 @@ bindsym $mod+i border normal
 bindsym $mod+z			    gaps inner current plus 5
 bindsym $mod+Shift+z		gaps inner current minus 5
 
-bindsym $mod+x              gaps inner all set 10
-bindsym $mod+Shift+x        gaps inner all set 0
+bindsym $mod+g              gaps inner all set 10
+bindsym $mod+Shift+g        gaps inner all set 0
 
 gaps inner 0
 gaps outer 0
@@ -301,8 +302,6 @@ bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewi
 bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
 
-bindsym $mod+m exec sleep 1 && xset dpms force off
-
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -331,17 +330,30 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# bindsym $mod+Control+l exec --no-startup-id "i3lock; xset dpms force off"
-#bindsym $mod+Control+l exec --no-startup-id "/home/stavrosfil/.scripts/lock_and_blur.sh"
-#bindsym $mod+Control+x exec --no-startup-id "/home/stavrosfil/.scripts/lock_and_blur.sh; systemctl suspend"
-
-# Lock screen
-bindsym $mod+Control+l exec --no-startup-id "blurlock"
-bindsym $mod+Control+x exec --no-startup-id "blurlock; systemctl syspend"
-exec --no-startup-id xautolock -time 10 -locker blurlock
-
 
 bindsym $mod+Ctrl+m exec $TERMINAL -e 'alsamixer'
+
+bindsym $mod+Control+Down exec --no-startup-id ddcutil setvcp 10 50 --display 1
+bindsym $mod+Control+Up exec --no-startup-id ddcutil setvcp 10 80 --display 1 
+
+bindsym $mod+Control+1 exec --no-startup-id ddcutil setvcp 10 10 --display 1 
+bindsym $mod+Control+2 exec --no-startup-id ddcutil setvcp 10 20 --display 1 
+bindsym $mod+Control+3 exec --no-startup-id ddcutil setvcp 10 30 --display 1 
+bindsym $mod+Control+4 exec --no-startup-id ddcutil setvcp 10 40 --display 1 
+bindsym $mod+Control+5 exec --no-startup-id ddcutil setvcp 10 50 --display 1 
+bindsym $mod+Control+6 exec --no-startup-id ddcutil setvcp 10 60 --display 1 
+bindsym $mod+Control+7 exec --no-startup-id ddcutil setvcp 10 70 --display 1 
+bindsym $mod+Control+8 exec --no-startup-id ddcutil setvcp 10 80 --display 1 
+bindsym $mod+Control+9 exec --no-startup-id ddcutil setvcp 10 90 --display 1 
+bindsym $mod+Control+0 exec --no-startup-id ddcutil setvcp 10 100 --display 1 
+#&; exec --no-startup-id ddcutil setvcp 10 100 --display 2
+
+bindsym $mod+m exec sleep 1 && xset dpms force off
+
+set $lock betterlockscreen -l dimblur
+bindsym $mod+l exec --no-startup-id $lock 
+bindsym $mod+x exec --no-startup-id "$lock; systemctl suspend"
+exec --no-startup-id xautolock -time 10 -locker $lock
 
 
 # ------------------------ Startup Applications ---------------------------- #
@@ -357,5 +369,5 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # exec_always --no-startup-id		"killall -q picom; picom --config ~/.config/picom/picom.conf"
 
 # exec_always --no-startup-id     killall notify-osd
-exec_always --no-startup-id     killall dunst
-exec_always --no-startup-id     dunst -config ~/.config/i3/config_dunst
+# exec_always --no-startup-id     killall dunst
+# exec_always --no-startup-id     dunst -config ~/.config/i3/config_dunst

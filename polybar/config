@@ -39,6 +39,8 @@ base9 = ${xrdb:color9:#000000}
 
 [bar/top]
 
+bottom = true
+
 monitor = ${env:MONITOR:}
 width = 100%
 height = 28

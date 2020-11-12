@@ -7,6 +7,7 @@ BIN_PATH="$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 
 mons --primary DP-0
 mons -e right
+# xrandr --output DVI-D-0 --rotate right
 
 export BROWSER="qutebrowser"
 export TERMINAL="kitty"
@@ -15,3 +16,4 @@ export EDITOR="code"
 
 xset r rate 200 50
 
+export ESPIDF=/opt/esp-idf
