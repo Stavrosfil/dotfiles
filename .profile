@@ -11,9 +11,12 @@ mons -e right
 
 export BROWSER="qutebrowser"
 export TERMINAL="kitty"
-export FILES="pcmanfm"
+export FILES="thunar"
 export EDITOR="code"
 
 xset r rate 200 50
 
 export ESPIDF=/opt/esp-idf
+export GPG_TTY=$(tty)
+
+export PATH="$HOME/.poetry/bin:$PATH"

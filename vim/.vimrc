@@ -132,10 +132,10 @@ Plug 'scrooloose/nerdtree'
 
 Plug 'chriskempson/base16-vim'
 
-" Plug 'dracula/vim'
-" Plug 'joshdick/onedark.vim'
-" Plug 'sonph/onehalf'
-" Plug 'ntk148v/vim-horizon'
+Plug 'dracula/vim'
+Plug 'joshdick/onedark.vim'
+Plug 'sonph/onehalf'
+Plug 'ntk148v/vim-horizon'
 
 
 " Initialize plug system.
@@ -149,10 +149,8 @@ if exists('+termguicolors')
 endif
 
 colorscheme base16-nord
-
 "colorscheme 	horizon
-"colorscheme 	halfdark
-
+"colorscheme 	onedark
 
 " Use Control + n to toggle the directories.
 map <C-n> :NERDTreeToggle<CR>

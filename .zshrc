@@ -114,7 +114,7 @@ alias sync="bash $HOME/repos/dotfiles/sync.sh"
 alias pip="pip3"
 alias mexec="chmod a+x"
 alias vi="vim"
-alias vim="nvim"
+alias nv="nvim"
 
 alias eg++="g++ -Wall -Wextra -Waggregate-return -Wcast-align -Wcast-qual -Wdisabled-optimization -Wdiv-by-zero -Wendif-labels -Wformat-extra-args -Wformat-nonliteral -Wformat-security -Wformat-y2k -Wimport -Winit-self -Winline -Winvalid-pch -Wlogical-op -Werror=missing-braces -Wmissing-declarations -Wno-missing-format-attribute -Wmissing-include-dirs -Wmultichar -Wpacked -Wpointer-arith -Wreturn-type -Wsequence-point -Wsign-compare -Wstrict-aliasing -Wstrict-aliasing=2 -Wswitch -Wswitch-default -Werror=undef -Wno-unused -Wvariadic-macros -Wwrite-strings"
 ### file browsing
@@ -198,3 +198,5 @@ export LANG=en_US.UTF-8
 
 # Used to spawn a terminal in the same working directory
 export PROMPT_COMMAND="pwd > /tmp/whereami"
+
+export PATH="$HOME/.poetry/bin:$PATH"

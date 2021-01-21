@@ -117,7 +117,8 @@ for_window [class="Xarchiver"] floating enable
 for_window [class="Pcmanfm"] floating enable
 for_window [class="Zathura"] floating enable
 for_window [class="Matplotlib"] floating enable
-
+for_window [class="MATLAB R2018a"] floating enable
+for_window [class="ImHex"] floating enable
 
 # FORMAT 1
 # set $ws1  "1 Terminals "
@@ -167,6 +168,15 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
+# ---------------------------- Default Workspace --------------------------- #
+
+# assign [class="firefox"] $ws2
+
+# assign [class="Mailspring"] $ws8
+# assign [class="discord"] $ws9
+# assign [class="Slack"] $ws9
+# assign [class="spotify"] $ws10
+# assign [class="Calendar"] $ws10
 
 # -------------------------------- Wallpaper ------------------------------- #
 
@@ -179,8 +189,8 @@ exec_always --no-startup-id $HOME/.fehbg
 # ------------------------------ Function Keys ----------------------------- #
 
 # Change language shortcuts
-exec_always 	                "setxkbmap -layout us,gr"
-exec_always		                "setxkbmap -option 'grp:alt_shift_toggle'"
+exec_always --no-startup-id "setxkbmap -layout us,gr"
+exec_always	--no-startup-id "setxkbmap -option 'grp:alt_shift_toggle'"
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec	pactl set-sink-volume @DEFAULT_SINK@ +5%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
@@ -216,16 +226,23 @@ bindsym $mod+Shift+minus move scratchpad
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
 
+bindsym $mod+Shift+plus sticky toggle
+
 
 # --------------------------------- Borders -------------------------------- #
 
 # smart_borders on
 for_window [class=".*"] border none
+# for_window [class="^.*"] border pixel 2
+for_window [class="floatingTerm"] border pixel 2
+
+# default_border pixel 3
+# default_floating_border pixel 2
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 # new_window none
 # new_float normal
-# new_float pixel 5
+# new_float border pixel 5
 
 # Hide borders
 # hide_edge_borders none
@@ -255,6 +272,7 @@ set_from_resource $inactive-bg-color    color0      #252932
 set_from_resource $text-color           foreground  #f3f4f5
 set_from_resource $inactive-text-color  color11     #676E7D
 set_from_resource $urgent-bg-color		color1      #f08080
+# set_from_resource $urgent-bg-color		color1      #4a7da1
 set_from_resource $indicator            color6      #3a5e5f
 set_from_resource $border_focused       color8      
 set_from_resource $border_unfocused     color11      
@@ -291,15 +309,20 @@ bindsym $mod+KP_Left move workspace to output left
 bindsym $mod+KP_Up move workspace to output up
 bindsym $mod+KP_Down move workspace to output down
 
-# Screenshots
-bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date).png"
-bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date).png"
-bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date).png"
 
-## Clipboard Screenshots
-bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
-bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
-bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+
+# ------------------------------- Screenshots ------------------------------ #
+
+# bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date).png"
+# bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date).png"
+# bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date).png"
+
+# ## Clipboard Screenshots
+# bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+# bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+# bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+
+bindsym Print exec --no-startup-id flameshot gui
 
 
 # reload the configuration file
@@ -333,41 +356,59 @@ bindsym $mod+r mode "resize"
 
 bindsym $mod+Ctrl+m exec $TERMINAL -e 'alsamixer'
 
-bindsym $mod+Control+Down exec --no-startup-id ddcutil setvcp 10 50 --display 1
-bindsym $mod+Control+Up exec --no-startup-id ddcutil setvcp 10 80 --display 1 
+set $monset ddcutil --less-sleep --sleep-multiplier .1 --async setvcp
 
-bindsym $mod+Control+1 exec --no-startup-id ddcutil setvcp 10 10 --display 1 
-bindsym $mod+Control+2 exec --no-startup-id ddcutil setvcp 10 20 --display 1 
-bindsym $mod+Control+3 exec --no-startup-id ddcutil setvcp 10 30 --display 1 
-bindsym $mod+Control+4 exec --no-startup-id ddcutil setvcp 10 40 --display 1 
-bindsym $mod+Control+5 exec --no-startup-id ddcutil setvcp 10 50 --display 1 
-bindsym $mod+Control+6 exec --no-startup-id ddcutil setvcp 10 60 --display 1 
-bindsym $mod+Control+7 exec --no-startup-id ddcutil setvcp 10 70 --display 1 
-bindsym $mod+Control+8 exec --no-startup-id ddcutil setvcp 10 80 --display 1 
-bindsym $mod+Control+9 exec --no-startup-id ddcutil setvcp 10 90 --display 1 
-bindsym $mod+Control+0 exec --no-startup-id ddcutil setvcp 10 100 --display 1 
+# bindsym $mod+Control+Down exec --no-startup-id $monset 10 - 10 --bus 10 && $monset 10 - 10 --bus 9
+# bindsym $mod+Control+Up exec --no-startup-id $monset 10 + 10 --bus 10 && $monset 10 + 10 --bus 9
+
+# bindsym $mod+Control+1 exec --no-startup-id $monset 10 10 --bus 10 && $monset 10 10 --bus 9
+# bindsym $mod+Control+2 exec --no-startup-id $monset 10 20 --bus 10 && $monset 10 20 --bus 9
+# bindsym $mod+Control+3 exec --no-startup-id $monset 10 30 --bus 10 && $monset 10 30 --bus 9
+# bindsym $mod+Control+4 exec --no-startup-id $monset 10 40 --bus 10 && $monset 10 40 --bus 9
+# bindsym $mod+Control+5 exec --no-startup-id $monset 10 50 --bus 10 && $monset 10 50 --bus 9
+# bindsym $mod+Control+6 exec --no-startup-id $monset 10 60 --bus 10 && $monset 10 60 --bus 9
+# bindsym $mod+Control+7 exec --no-startup-id $monset 10 70 --bus 10 && $monset 10 70 --bus 9
+# bindsym $mod+Control+8 exec --no-startup-id $monset 10 80 --bus 10 && $monset 10 80 --bus 9
+# bindsym $mod+Control+9 exec --no-startup-id $monset 10 90 --bus 10 && $monset 10 90 --bus 9
+# bindsym $mod+Control+0 exec --no-startup-id $monset 10 100 --bus 10 && $monset 10 100 --bus 9
 #&; exec --no-startup-id ddcutil setvcp 10 100 --display 2
+
+bindsym $mod+Control+Down exec --no-startup-id $monset 10 - 10 --display 1 && $monset 10 - 10 --display 2
+bindsym $mod+Control+Up exec --no-startup-id $monset 10 + 10 --display 1 && $monset 10 + 10 --display 2
+
+bindsym $mod+Control+1 exec --no-startup-id $monset 10 10 --display 1 && $monset 10 10 --display 2
+bindsym $mod+Control+2 exec --no-startup-id $monset 10 20 --display 1 && $monset 10 20 --display 2
+bindsym $mod+Control+3 exec --no-startup-id $monset 10 30 --display 1 && $monset 10 30 --display 2
+bindsym $mod+Control+4 exec --no-startup-id $monset 10 40 --display 1 && $monset 10 40 --display 2
+bindsym $mod+Control+5 exec --no-startup-id $monset 10 50 --display 1 && $monset 10 50 --display 2
+bindsym $mod+Control+6 exec --no-startup-id $monset 10 60 --display 1 && $monset 10 60 --display 2
+bindsym $mod+Control+7 exec --no-startup-id $monset 10 70 --display 1 && $monset 10 70 --display 2
+bindsym $mod+Control+8 exec --no-startup-id $monset 10 80 --display 1 && $monset 10 80 --display 2
+bindsym $mod+Control+9 exec --no-startup-id $monset 10 90 --display 1 && $monset 10 90 --display 2
+bindsym $mod+Control+0 exec --no-startup-id $monset 10 100 --display 1 && $monset 10 100 --display 2
 
 bindsym $mod+m exec sleep 1 && xset dpms force off
 
 set $lock betterlockscreen -l dimblur
 bindsym $mod+l exec --no-startup-id $lock 
-bindsym $mod+x exec --no-startup-id "$lock; systemctl suspend"
+# bindsym $mod+x exec --no-startup-id "$lock; systemctl suspend"
 exec --no-startup-id xautolock -time 10 -locker $lock
 
 
 # ------------------------ Startup Applications ---------------------------- #
 
+exec --no-startup-id pasystray
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
+exec --no-startup-id blueman-tray
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Execute picom
 # exec_always --no-startup-id     killall picom
-# exec_always --no-startup-id		"killall -q picom; picom --config ~/.config/picom/picom.conf"
+exec_always --no-startup-id		"killall -q picom; picom --config ~/.config/picom/picom.conf"
 
-# exec_always --no-startup-id     killall notify-osd
-# exec_always --no-startup-id     killall dunst
+exec_always --no-startup-id     "killall -q dunst; dunst"
 # exec_always --no-startup-id     dunst -config ~/.config/i3/config_dunst
+# exec_always --no-startup-id     killall notify-osd

@@ -17,3 +17,7 @@ set guioptions none
 
 set window-title-basename "true"
 set selection-clipboard "clipboard"
+
+set synctex true
+set synctex-editor-command "lyxclient -g %{input} %{line}"
+
