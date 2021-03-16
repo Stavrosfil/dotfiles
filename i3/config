@@ -119,6 +119,7 @@ for_window [class="Zathura"] floating enable
 for_window [class="Matplotlib"] floating enable
 for_window [class="MATLAB R2018a"] floating enable
 for_window [class="ImHex"] floating enable
+for_window [class="feh"] floating enable
 
 # FORMAT 1
 # set $ws1  "1 Terminals "

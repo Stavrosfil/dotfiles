@@ -84,7 +84,6 @@ chpwd() {
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-
 export ANDROID_HOME=/opt/android-sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
@@ -95,7 +94,9 @@ export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH="$HOME/.scripts:$PATH"
 export PATH="${PATH}:${HOME}/.local/bin/"
 # export JAVA_HOME="/usr/lib/jvm/java-8-openjdk/"
-export JAVA_HOME="/usr/lib/jvm/java-14-openjdk/"
+# sudo archlinux-java set java-15-jdk
+# export JAVA_HOME="/usr/lib/jvm/java-11-openjdk/"
+# export JAVA_HOME="/usr/lib/"
 #export ANDROID_HOME="$HOME/Android/Sdk"
 # export IDF_PATH="$HOME/esp/esp-idf"
 export IDF_PATH="$HOME/esp/ESP8266_RTOS_SDK"
