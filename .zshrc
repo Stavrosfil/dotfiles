@@ -1,14 +1,21 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+fpath+=$HOME/.zsh/pure
+
+autoload -U promptinit
+promptinit
+prompt pure
+
 # export ZSH="$HOME/.oh-my-zsh"
 
-source $HOME/antigen.zsh
+# source $HOME/antigen.zsh
+source /usr/share/zsh/share/antigen.zsh
 
-export TERMINAL="kitty"
+# export TERMINAL="kitty"
 
 # Export sync script thingy
-export already_setup=true
+# export already_setup=true
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -28,8 +35,8 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme.
 # antigen theme geometry-zsh/geometry
-antigen bundle mafredri/zsh-async
-antigen bundle sindresorhus/pure
+#antigen bundle mafredri/zsh-async
+#antigen bundle sindresorhus/pure
 
 # Tell Antigen that you're done.
 antigen apply
@@ -61,14 +68,7 @@ alias gl="git log --oneline --decorate"
 alias glog="git log --oneline --all --graph --decorate -n 30"
 alias gslog="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Custom cd functinallity
-#custom_cd() {
-#    cd $1
-#    ls --color=auto
-#}
-#alias cd="custom_cd"
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 chpwd() {
     ls --color=auto
@@ -84,29 +84,30 @@ chpwd() {
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-export ANDROID_HOME=/opt/android-sdk
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
+# export ANDROID_HOME=/opt/android-sdk
+# export PATH=$PATH:$ANDROID_HOME/tools
+# export PATH=$PATH:$ANDROID_HOME/platform-tools
+# export PATH=$PATH:$ANDROID_HOME/tools/bin
+# export PATH="$HOME/.scripts:$PATH"
+# export PATH="${PATH}:${HOME}/.local/bin/"
+# export IDF_PATH="$HOME/esp/ESP8266_RTOS_SDK"
+# export TERM=xterm-256color
+
 #export PATH="$HOME/tools/cubemx/STM32CubeMX/:$PATH"
 #export PATH="$HOME/tools/android-studio/bin:$PATH"
 #export PATH="$HOME/tools/flutter/bin:$PATH"
-export PATH="$HOME/.scripts:$PATH"
-export PATH="${PATH}:${HOME}/.local/bin/"
 # export JAVA_HOME="/usr/lib/jvm/java-8-openjdk/"
 # sudo archlinux-java set java-15-jdk
 # export JAVA_HOME="/usr/lib/jvm/java-11-openjdk/"
 # export JAVA_HOME="/usr/lib/"
 #export ANDROID_HOME="$HOME/Android/Sdk"
 # export IDF_PATH="$HOME/esp/esp-idf"
-export IDF_PATH="$HOME/esp/ESP8266_RTOS_SDK"
-export TERM=xterm-256color
 # export TERM=xterm-kitty
 # export TERM=xterm
 
 # Aliases
-alias cl="clear"
 # alias cubemx="tools/cubemx/STM32CubeMX"
+alias cl="clear"
 alias zcon="vi $HOME/.zshrc"
 alias cfi="vi $HOME/.config/i3/config"
 alias dot="$HOME/repos/dotfiles/"
@@ -116,6 +117,7 @@ alias pip="pip3"
 alias mexec="chmod a+x"
 alias vi="vim"
 alias nv="nvim"
+alias p="python"
 
 alias eg++="g++ -Wall -Wextra -Waggregate-return -Wcast-align -Wcast-qual -Wdisabled-optimization -Wdiv-by-zero -Wendif-labels -Wformat-extra-args -Wformat-nonliteral -Wformat-security -Wformat-y2k -Wimport -Winit-self -Winline -Winvalid-pch -Wlogical-op -Werror=missing-braces -Wmissing-declarations -Wno-missing-format-attribute -Wmissing-include-dirs -Wmultichar -Wpacked -Wpointer-arith -Wreturn-type -Wsequence-point -Wsign-compare -Wstrict-aliasing -Wstrict-aliasing=2 -Wswitch -Wswitch-default -Werror=undef -Wno-unused -Wvariadic-macros -Wwrite-strings"
 ### file browsing
@@ -140,7 +142,6 @@ alias mv="mv -fv"
 alias mvi="mv -fvi"
 
 alias tmux="tmux -u"
-
 alias bgset="feh --bg-fill --auto-zoom"
 
 # History directory navigation
@@ -155,16 +156,16 @@ d='dirs -v | head -10'
 8='cd -8'
 9='cd -9'
 
-wal-tile() {
-    wal -n -i "$@"
-    feh --bg-tile "$(<"${HOME}/.cache/wal/wal")"
-}
+# wal-tile() {
+#     wal -n -i "$@"
+#     feh --bg-tile "$(<"${HOME}/.cache/wal/wal")"
+# }
 
 # Open files with zathura and disown
 za() {
     zathura $1 &
     disown
-    kill $PPID
+    # kill $PPID
 }
 
 # . $HOME/esp/esp-idf/export.sh
@@ -175,16 +176,16 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
     [ -s "$BASE16_SHELL/profile_helper.sh" ] &&
     eval "$("$BASE16_SHELL/profile_helper.sh")"
 
-PATH="/home/stavrosfil/perl5/bin${PATH:+:${PATH}}"
-export PATH
-PERL5LIB="/home/stavrosfil/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"
-export PERL5LIB
-PERL_LOCAL_LIB_ROOT="/home/stavrosfil/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"
-export PERL_LOCAL_LIB_ROOT
-PERL_MB_OPT="--install_base \"/home/stavrosfil/perl5\""
-export PERL_MB_OPT
-PERL_MM_OPT="INSTALL_BASE=/home/stavrosfil/perl5"
-export PERL_MM_OPT
+# PATH="/home/stavrosfil/perl5/bin${PATH:+:${PATH}}"
+# export PATH
+# PERL5LIB="/home/stavrosfil/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"
+# export PERL5LIB
+# PERL_LOCAL_LIB_ROOT="/home/stavrosfil/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"
+# export PERL_LOCAL_LIB_ROOT
+# PERL_MB_OPT="--install_base \"/home/stavrosfil/perl5\""
+# export PERL_MB_OPT
+# PERL_MM_OPT="INSTALL_BASE=/home/stavrosfil/perl5"
+# export PERL_MM_OPT
 
 # Automatically start a tmux session when connecting with SSH
 if [[ -z "$TMUX" ]] && [ "$SSH_CONNECTION" != "" ]; then
@@ -192,12 +193,12 @@ if [[ -z "$TMUX" ]] && [ "$SSH_CONNECTION" != "" ]; then
 fi
 
 # Fix repeating characters on tab completion
-export LC_ALL="en_US.UTF-8"
+#export LC_ALL="en_US.UTF-8"
 
 # You may need to manually set your language environment
-export LANG=en_US.UTF-8
+# export LANG=en_US.UTF-8
 
 # Used to spawn a terminal in the same working directory
-export PROMPT_COMMAND="pwd > /tmp/whereami"
+# export PROMPT_COMMAND="pwd > /tmp/whereami"
 
-export PATH="$HOME/.poetry/bin:$PATH"
+# export PATH="$HOME/.poetry/bin:$PATH"

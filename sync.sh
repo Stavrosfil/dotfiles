@@ -19,7 +19,7 @@ chsh -s $(which zsh)
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 
 # Set auto timezone
-timedatectl set-ntp true
+# timedatectl set-ntp true
 
 # ------------------------------ Symbolic links ------------------------------ #
 
@@ -40,21 +40,22 @@ ln -sfnv $DOTS/.clang-format $HOME
 ln -sfnv $DOTS/qutebrowser $HOME/.config
 ln -sfnv $DOTS/kicad $HOME/.config
 ln -sfnv $DOTS/polybar $HOME/.config
+ln -sfnv $DOTS/.profile $HOME
 # ln -sv $DOTS/i3blocks $HOME/.config/
 # ln -sv $DOTS/wall.png $HOME/Pictures/
 
 # ----------------------------------- Nvim ----------------------------------- #
 
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+#curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+#    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Enter Neovim and install plugins using a temporary init.vim
 # which avoids warnings about missing colorschemes, functions, etc
-sed '/call plug#end/q' init.vim >~/.config/nvim/init.vim
-nvim -c ':PlugInstall' -c ':UpdateRemotePlugins' -c ':qall'
-rm ~/.config/nvim/init.vim
+#sed '/call plug#end/q' init.vim >~/.config/nvim/init.vim
+#nvim -c ':PlugInstall' -c ':UpdateRemotePlugins' -c ':qall'
+#rm ~/.config/nvim/init.vim
 
-ln -sfnv $DOTS/nvim $HOME/.config
+#ln -sfnv $DOTS/nvim $HOME/.config
 
 # -------------------------------- X11 Config -------------------------------- #
 
